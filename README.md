@@ -2,11 +2,11 @@
 
 Enfocado en desarrolladores y profesiones afines trabajando remotamente desde Chile.
 
-> **Última actualización: octubre 2026.** Cifras tributarias y previsionales verificadas contra fuentes oficiales (SII, ChileAtiende, Subsecretaría de Previsión Social). Lo que no pudimos verificar está marcado con ⚠️ y listado al final en [Pendientes por verificar](#pendientes-por-verificar).
+> **Última actualización: octubre 2026.** Cifras tributarias y previsionales verificadas contra fuentes oficiales (SII, ChileAtiende, Subsecretaría de Previsión Social). Lo que no pudimos verificar está marcado con **Sin verificar:** y listado al final en [Pendientes por verificar](#pendientes-por-verificar).
 
 ---
 
-⚠️ **Ninguno de nosotros es abogado, ni asesor financiero o tributario. La información en este repositorio NO constituye asesoramiento de ningún tipo. Consulta con un profesional.** ⚠️
+**Ninguno de nosotros es abogado, ni asesor financiero o tributario. La información en este repositorio NO constituye asesoramiento de ningún tipo. Consulta con un profesional.**
 
 ---
 
@@ -41,7 +41,7 @@ Hay muchísimas plataformas online para buscar trabajo remoto, pero los mejores 
 **Ojo con la geografía:** un aviso que dice "remote" muchas veces está limitado a EE.UU., Europa o un país específico. Revisa siempre desde qué países contrata la empresa (en RemoteOK, por ejemplo, aparece como "Hires Remotely From") y si ofrece contrato de empleo, de contractor o freelance.
 
 - [devschile](https://devschile.cl/) tiene un canal #trabajos con bastante énfasis en lo remoto.
-- [Hacker News](https://news.ycombinator.com/) publica mensualmente un hilo de "Who's hiring". ⚠️ Los links a herramientas para navegarlo que tenía la versión anterior estaban obsoletos; búscalas con "hn who is hiring search".
+- [Hacker News](https://news.ycombinator.com/) publica mensualmente un hilo de "Who's hiring". **Sin verificar:** Los links a herramientas para navegarlo que tenía la versión anterior estaban obsoletos; búscalas con "hn who is hiring search".
 - [We Work Remotely](https://weworkremotely.com) es, en sus palabras, la comunidad de trabajo remoto más grande del mundo; muy fuerte en tecnología.
 - [RemoteOK](https://remoteok.com) fue creada por [Pieter Levels](https://x.com/levelsio), quien también creó [NomadList](https://nomadlist.com).
 - [Remote.co](https://remote.co) concentra empleadores remote-first. (No confundir con [Remote.com](https://remote.com), que es una plataforma de contratación y pagos para empleadores.)
@@ -55,7 +55,7 @@ Hay muchísimas plataformas online para buscar trabajo remoto, pero los mejores 
 
 Harto. Por favor, aprovecha que hay demanda de desarrolladores y cobra caro, nos beneficia a todes que "desarrollador/a en Chile" no sea sinónimo de bajo presupuesto.
 
-Si no tienes idea cuánto es "harto", estas son nuestras sugerencias (USD brutos anuales) ⚠️ *rangos de la versión original, no re-validados con datos de mercado 2026*:
+Si no tienes idea cuánto es "harto", estas son nuestras sugerencias (USD brutos anuales) **Sin verificar:** *rangos de la versión original, no re-validados con datos de mercado 2026*:
 
 - Junior, literalmente recién formado: 70.000 dólares al año
 - Senior, capaz de trabajar independiente y consistentemente entregar buenos resultados: 90.000 dólares al año
@@ -68,7 +68,7 @@ Parte negociando con un 20-30% más de lo que quieres.
 
 Si trabajas como freelancer por hora o día, cobra el doble, tienes que pagar las horas que pasarás buscando proyectos y el tiempo que te dejarán esperando.
 
-Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección ["Paga impuestos, salud y cotizaciones"](#paga-impuestos-salud-y-cotizaciones). Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar [esta calculadora](https://impuestos.netlify.app/) ([Repo](https://github.com/muzk/impuestos)) ⚠️ *verifica que use las cifras 2026 de esta guía*, o el [simulador oficial de cotización](https://previsionsocial.gob.cl/simulador/).
+Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección ["Paga impuestos, salud y cotizaciones"](#paga-impuestos-salud-y-cotizaciones). Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar [esta calculadora](https://impuestos.netlify.app/) ([Repo](https://github.com/muzk/impuestos)) **Sin verificar:** *verifica que use las cifras 2026 de esta guía*, o el [simulador oficial de cotización](https://previsionsocial.gob.cl/simulador/).
 
 ## Recibe tu sueldo
 
@@ -86,14 +86,14 @@ Ventajas:
 
 Limitaciones:
 
-- ⚠️ no entrega tarjeta física para residentes en Chile (según una comparativa de Global66; verifica si cambió con el lanzamiento local)
+- **Sin verificar:** no entrega tarjeta física para residentes en Chile (según una comparativa de Global66; verifica si cambió con el lanzamiento local)
 - tu empleador debe poder pagar a una cuenta local de EE.UU./Eurozona (casi siempre puede)
 
 ### Otras alternativas (fintech)
 
 - **[Payoneer](https://www.payoneer.com)**: pensada para cobrar desde marketplaces (Upwork, Fiverr, etc.). Una estrategia común es recibir en Payoneer y traspasar a Wise para convertir.
 - **[Deel](https://www.deel.com)**: es una plataforma de contratos y pagos para empresas; tu empleador también tiene que estar en Deel. Útil si ya te contratan por ahí.
-- **[Global66 – Cuenta Global](https://global66.com/cl/freelancers/)**: ofrece números de cuenta en EE.UU. y Europa a tu nombre, retiro por ACH desde plataformas como Deel. ⚠️ Ojo: los servicios de divisas se centralizan en Global 81 SpA, que **no está fiscalizada por la CMF** según su propio sitio. Evalúa el riesgo antes de mover montos grandes.
+- **[Global66 – Cuenta Global](https://global66.com/cl/freelancers/)**: ofrece números de cuenta en EE.UU. y Europa a tu nombre, retiro por ACH desde plataformas como Deel. **Sin verificar:** Ojo: los servicios de divisas se centralizan en Global 81 SpA, que **no está fiscalizada por la CMF** según su propio sitio. Evalúa el riesgo antes de mover montos grandes.
 - **PayPal**: suele ser caro (margen cambiario de varios puntos porcentuales sobre el tipo de cambio medio). Úsalo solo si el cliente no te deja otra opción.
 
 ### Cuenta en el extranjero
@@ -137,7 +137,7 @@ Una transferencia SWIFT puede costar del orden de **35-40 USD en total** entre b
   - **Tip**: intenta negociar que esto lo pague tu empleador y que no te lo descuenten del sueldo.
 2. La comisión que te cobra el banco chileno por recibir el dinero: depende del Banco. En algunos casos, esta comisión es negociable si recibes periódicamente dinero.
 
-⚠️ **Las tablas de comisiones por banco de la versión anterior eran imágenes de 2020-2024 y no pudimos re-verificarlas.** Datos puntuales recientes:
+**Sin verificar: las tablas de comisiones por banco de la versión anterior eran imágenes de 2020-2024 y no pudimos re-verificarlas.** Datos puntuales recientes:
 
 | Banco | Dato | Fuente |
 | ----- | ---- | ------ |
@@ -157,12 +157,12 @@ Una vez le pasaste los datos de transferencia a tu empleador:
 
 Ahora el dinero está a tu nombre, en Chile y en tu banco... pero no en tu cuenta. Recuerda que te llegaron USD, así que no puedes pasarlo directamente a tu cuenta en CLP. ¿Qué hacer?
 
-1. Un buen banco con tecnología de punta (😂) te enviará un correo notificándote del pago. En otros casos, tienes que usar *polling* (😭) y llamar hasta que te digan que llegó
+1. Un buen banco con tecnología de punta te enviará un correo notificándote del pago. En otros casos, tienes que usar *polling* y llamar hasta que te digan que llegó
 2. Ahora que ya sabes que están los dólares, debes ir a una sucursal.
-  - OJO 👀: pregunta en qué sucursal te pueden atender. BancoEstado tiene [sucursales especiales](https://www.bancoestado.cl/imagenes/_personas/noticias/detalle/sucursales-chilenos-exterior.asp) para esto.
-  - En el caso del **Bci**: Si bien el proceso es igual de manual que en los otros bancos, Bci permite hacerlo de manera remota, poniéndote en contacto con la ejecutiva que está a cargo de las operaciones en moneda extranjera, quien te enviará una carta para completar donde se define el tipo de cambio y las cuentas en las que se abonará el monto y de donde se descontará la comisión. ⚠️ *Basado en experiencias personales anteriores; confirma que siga vigente.*
+  - OJO: pregunta en qué sucursal te pueden atender. BancoEstado tiene [sucursales especiales](https://www.bancoestado.cl/imagenes/_personas/noticias/detalle/sucursales-chilenos-exterior.asp) para esto.
+  - En el caso del **Bci**: Si bien el proceso es igual de manual que en los otros bancos, Bci permite hacerlo de manera remota, poniéndote en contacto con la ejecutiva que está a cargo de las operaciones en moneda extranjera, quien te enviará una carta para completar donde se define el tipo de cambio y las cuentas en las que se abonará el monto y de donde se descontará la comisión. **Sin verificar:** *Basado en experiencias personales anteriores; confirma que siga vigente.*
 3. En el mesón de atención de cliente, solicita tus dólares.
-  - OJO 👀: en BancoEstado tienes que hablar con el ejecutivo de "Inversiones".
+  - OJO: en BancoEstado tienes que hablar con el ejecutivo de "Inversiones".
 4. El ejecutivo te generará un voucher que debes pagar en caja (son las comisiones del banco, ver sección anterior)
   - En algunos bancos, como el Itaú, te descuentan directamente de tu cuenta corriente
 5. Con el número que ya sacaste, espera tu turno en caja.
@@ -176,9 +176,9 @@ Una vez le pasaste los datos de transferencia a tu empleador:
 
 - te harán una transferencia del pago (en dólares) de su banco al tuyo.
 - el pago se demora 1 o dos días hábiles "en llegar".
-- el pago llega y estará disponible en tu cuenta corriente en dólares ✌️
+- el pago llega y estará disponible en tu cuenta corriente en dólares
 - ahora puedes vender dólares, y los pesos chilenos serán depositados en tu cuenta corriente
-- también puedes pagar tu cuenta internacional (ej: tus compras de AliExpress o Uber) directamente con tus dólares 😉
+- también puedes pagar tu cuenta internacional (ej: tus compras de AliExpress o Uber) directamente con tus dólares
 
 Es muy cómodo que el pago te llegue y que más encima puedas venderlos sin ir a una oficina con depósito a tu cuenta en CLP.
 
@@ -197,7 +197,7 @@ Dile a tu ejecutivo que quieres abrir cuenta en dólares porque recibes tu sueld
 - es normal que te pidan recibos de pagos anteriores si ya has recibido pagos anteriormente.
 - si te pagan mensualmente, díselo a tu ejecutivo. Darle el contexto completo siempre ayuda.
 
-Bancos que ofrecen cuenta corriente en dólares: Santander, Banco de Chile, BICE, Scotiabank, Itaú, Bci y BancoEstado. ⚠️ Los costos de mantención de la tabla anterior eran de enero 2020; consulta el tarifario vigente.
+Bancos que ofrecen cuenta corriente en dólares: Santander, Banco de Chile, BICE, Scotiabank, Itaú, Bci y BancoEstado. **Sin verificar:** Los costos de mantención de la tabla anterior eran de enero 2020; consulta el tarifario vigente.
 
 #### Tipo de Cambio
 
@@ -213,7 +213,7 @@ El tipo de cambio depende de cómo vendas tus dólares:
 - Tu empleador te puede enviar USD a tu cuenta chilena, o puedes usar una cuenta tipo Wise para evitar la mayoría de las fricciones.
 - Por transferencia bancaria hay comisiones que le cobran a tu empleador por enviar (~20 USD) y a ti por recibir (varía por banco).
 - Puedes recibir tu pago en cualquier tipo de cuenta (incluso cuenta RUT) aunque en cuentas vistas pueden haber límites de montos.
-- Si recibes en cuenta corriente en pesos chilenos, tienes que ir a sucursal a retirar los dólares 🙃, a menos que tengas una cuenta en el Bci.
+- Si recibes en cuenta corriente en pesos chilenos, tienes que ir a sucursal a retirar los dólares, a menos que tengas una cuenta en el Bci.
 - Si recibes en cuenta corriente en dólares, el abono se hace automáticamente y puedes vender los dólares a través de las plataformas web o llamando a tu ejecutiv@. El tipo de cambio varía con el mercado.
 - Para abrir cuenta en dólares te pueden pedir ciertos requisitos, preguntar a ejecutiv@.
 
@@ -225,7 +225,7 @@ Suponiendo que la empresa para la que trabajas no tiene presencia legal en Chile
 
 El SII tiene un RUT especial para empresas extranjeras: **44.444.446-0**. En el campo de región puedes poner cualquier cosa, pero la dirección debería ser la real de la empresa.
 
-Si te pagan en dólares, usa la [tabla dólar-peso del SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm) para convertir el total. ⚠️ *El link sigue el patrón de años anteriores; confirma que abra.*
+Si te pagan en dólares, usa la [tabla dólar-peso del SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm) para convertir el total. **Sin verificar:** *El link sigue el patrón de años anteriores; confirma que abra.*
 
 ### Impuestos mensuales
 
@@ -252,7 +252,7 @@ Esta parte cambió mucho respecto de la versión anterior, donde estaba marcada 
 
 **¿Cómo se paga?** Se calcula en la Operación Renta (abril) y el pago lo hace la Tesorería General de la República (TGR) a las instituciones previsionales, imputando tu retención. Te da cobertura anual **desde el 1 de julio hasta el 30 de junio** del año siguiente. Ya no es necesario pagar "AFP y salud a mano".
 
-**Base imponible:** el **80% del total de tus boletas del año anterior**, con un tope anual equivalente a 12 veces el tope imponible mensual (≈90 UF mensuales en 2026 para AFP y salud; ⚠️ la cifra exacta varía entre fuentes, 89,9-90 UF; confirma en la [Superintendencia de Pensiones](https://www.spensiones.cl)).
+**Base imponible:** el **80% del total de tus boletas del año anterior**, con un tope anual equivalente a 12 veces el tope imponible mensual (≈90 UF mensuales en 2026 para AFP y salud; **Sin verificar:** la cifra exacta varía entre fuentes, 89,9-90 UF; confirma en la [Superintendencia de Pensiones](https://www.spensiones.cl)).
 
 **¿Qué se paga?**
 
@@ -270,7 +270,7 @@ Esta parte cambió mucho respecto de la versión anterior, donde estaba marcada 
 
 | Operación Renta | 2026 | 2027 | 2028 |
 | --------------- | ---- | ---- | ---- |
-| % de la renta imponible en cobertura parcial | 80% | 90% ⚠️ | desaparece (100%) |
+| % de la renta imponible en cobertura parcial | 80% | 90% (sin verificar) | desaparece (100%) |
 
 Con cobertura parcial pagas menos y recibes una parte mayor de la devolución, pero **tendrás menos cobertura en licencias médicas y subsidios maternales** y ahorras menos para tu pensión. El SIS, ATEP y SANNA siempre se calculan sobre el 100%.
 
@@ -318,7 +318,7 @@ El `FACTOR` y `REBAJA` salen de la "tabla impuesto global complementario". Para 
 - Base imponible: $16.800.000 → tramo del 4%.
 - Impuesto: `16.800.000 × 0,04 − 450.632 = $221.368` (≈ 0,9% efectivo).
 
-**Ejemplo 2.** Si eres 🚀 y ganaste $60.000.000:
+**Ejemplo 2.** Si tus ingresos son altos y ganaste $60.000.000:
 
 - Gastos: el 30% ($18 M) supera el tope, quedas en 15 UTA = $12.517.560.
 - Base imponible: $47.482.440 → tramo del 13,5%.
@@ -358,11 +358,11 @@ Las RSUs en general son entregadas por empresas que ya son públicas o más esta
 
 ## Créditos con Bancos (hipotecario, de consumo, etc).
 
-⚠️ *Esta sección no pudo re-verificarse con fuentes oficiales; son criterios de bancos que cambian con frecuencia.*
+**Sin verificar:** *Esta sección no pudo re-verificarse con fuentes oficiales; son criterios de bancos que cambian con frecuencia.*
 
 Como trabajador remoto para una empresa de USA (sin contrato con una empresa chilena) eres considerado como **TRABAJADOR INDEPENDIENTE**, aunque seas en la práctica dependiente.
 
-Para los bancos, es muy probable que te consideren "más riesgoso" solo por el hecho de ser trabajador independiente. Lo cual hace sentido si pensamos que ellos, en general, tienen ingresos variables e históricamente no se han pagado sus cotizaciones previsionales (por eso ahora lo hicieron obligatorio 😉).
+Para los bancos, es muy probable que te consideren "más riesgoso" solo por el hecho de ser trabajador independiente. Lo cual hace sentido si pensamos que ellos, en general, tienen ingresos variables e históricamente no se han pagado sus cotizaciones previsionales (por eso ahora lo hicieron obligatorio).
 
 En consecuencia, los bancos te exigirán harta información de respaldo para cosas como **CRÉDITOS HIPOTECARIOS**.
 
@@ -393,7 +393,7 @@ Para demostrar que eres menos riesgoso, puedes usar lo siguiente:
 
 - Cotizaciones pagadas al día (ahora obligatorias vía Operación Renta). Tu certificado de cotizaciones del F22 ayuda a verte "más serio" para el banco.
 - Contrato, incluso si es para una empresa gringa te podría ayudar.
-- Poca variación de tus boletas de honorarios. Si te pagan X dólares mensuales siempre, estás bien 👍 (tu sueldo variará de acuerdo al dólar). Ahora, si un mes ganas 100 y el otro mes ganas 2.000 ahí ya es distinto.
+- Poca variación de tus boletas de honorarios. Si te pagan X dólares mensuales siempre, estás bien (tu sueldo variará de acuerdo al dólar). Ahora, si un mes ganas 100 y el otro mes ganas 2.000 ahí ya es distinto.
 - Título Universitario, sobre todo si es de una universidad "tradicional". Esto ayuda sobre todo si evalúas un banco donde no tienes cuenta, ya que te podrían dar un crédito solo para ganarte como cliente.
 - Mayor pie al que te piden. Esto demuestra que tienes capacidad de ahorro, y de paso, disminuye el dividendo.
 - Tener al menos una declaración de renta donde se vea que tu sueldo como independiente es estable.

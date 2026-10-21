@@ -207,7 +207,8 @@ h1, h2, h3, h4 { font-synthesis: none; }
   align-items: baseline;
 }
 .calc-head h2 { font-family: var(--display); font-weight: 400; font-size: 0.95rem; margin: 0; }
-.calc-head h2::before { content: ""; display: inline-block; width: 0.6rem; height: 0.6rem; background: #fff; border-radius: 50%; margin-right: 0.6rem; }
+.calc-head h2 { display: flex; align-items: center; gap: 0.6rem; }
+.calc-head .ico { stroke: #fff; }
 .calc-head p { margin: 0; font-size: 0.9rem; color: #ffe6e2; }
 .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0.9rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); }
 .field label { display: block; font-size: 0.9rem; color: var(--muted); margin-bottom: 0.35rem; }
@@ -276,6 +277,10 @@ article h2 {
 @keyframes hatch { to { background-position: 8.485px 0; } }
 article h2::before { content: ""; position: absolute; top: 0; left: 0; width: 4.5rem; height: 12px; background: var(--red); clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%); }
 article h2:first-child { margin-top: 2.5rem; }
+/* Iconos de título: trazo fino, rojo */
+.ico { width: 1.3em; height: 1.3em; flex: none; fill: none; stroke: var(--red); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+article h2, article h3 { display: flex; align-items: center; gap: 0.7em; }
+article h3 .ico { width: 1.25em; height: 1.25em; stroke-width: 1.8; }
 article h3 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; line-height: 1.35; margin: 2.5rem 0 0.75rem; }
 article h4 { font-family: var(--display); font-weight: 400; font-size: 0.92rem; line-height: 1.4; margin: 2rem 0 0.5rem; }
 article p, article li { max-width: 68ch; }
