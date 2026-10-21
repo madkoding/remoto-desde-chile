@@ -20,7 +20,7 @@ ICONS = {'search': '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>', 
 ICON_FOR = [
     ("encuentra-trabajo", "search"), ("cuanto-cobro", "coin"), ("recibe-tu-sueldo", "wallet"),
     ("paga-impuestos", "bank"), ("stock-options", "trend"), ("creditos-con-bancos", "home"),
-    ("pendientes", "check"), ("fuentes", "book"),
+    ("tengo-mas-preguntas", "help"), ("pendientes", "check"), ("fuentes", "book"),
     ("formas-de-trabajo", "brief"), ("preparacion", "clip"), ("donde-encontrar", "pin"),
     ("wise", "swap"), ("otras-alternativas", "phone"), ("cuenta-en-el-extranjero", "globe"),
     ("transferencia-bancaria", "send"), ("emision-de-boletas", "file"), ("impuestos-mensuales", "cal"),
@@ -177,6 +177,7 @@ def main():
 
     short = {
         "paga-impuestos-salud-y-cotizaciones": "Impuestos y cotizaciones",
+        "tengo-mas-preguntas": "Más preguntas",
         "stock-optionsrsus": "Stock options y RSUs",
         "creditos-con-bancos-hipotecario-de-consumo-etc": "Créditos bancarios",
     }

@@ -24,4 +24,10 @@ Guía para desarrolladores que trabajan para el extranjero desde Chile: cómo co
 - Cada mes se revisan los enlaces, y en enero y julio se abre un issue para revisar SIS, tope imponible y retención.
 - Lo que no se pudo verificar está marcado en la guía y listado, con su estado, en la sección "Pendientes por verificar".
 
+## Licencias
+
+- **Código** (`build.py`, `assets/*.js`, `assets/style.css`, `tests/`, `.github/`): [MIT](LICENSE).
+- **Fuentes** (`assets/fonts/`): Barlow, Michroma y DSEG14, bajo SIL Open Font License 1.1 (cada licencia está junto a su fuente).
+- **Texto de la guía** (`GUIA.md`): todavía no tiene una licencia declarada. Hasta definirla, no se concede permiso de reutilización más allá de leerla en el sitio.
+
 Esta información no constituye asesoramiento legal, financiero ni tributario.

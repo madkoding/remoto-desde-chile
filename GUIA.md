@@ -404,6 +404,10 @@ Para demostrar que eres menos riesgoso, puedes usar lo siguiente:
 - Mayor pie al que te piden. Esto demuestra que tienes capacidad de ahorro, y de paso, disminuye el dividendo.
 - Tener al menos una declaración de renta donde se vea que tu sueldo como independiente es estable.
 
+## Tengo más preguntas
+
+¿Falta algo o tienes un dato más reciente? Abre un [issue en el repositorio](https://github.com/madkoding/remoto-desde-chile/issues) o propón el cambio con un pull request.
+
 ## Pendientes por verificar
 
 Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o directa; "Parcial" = hay datos con fecha pero no vigentes de forma oficial; "Pendiente" = no se pudo confirmar.
