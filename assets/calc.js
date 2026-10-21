@@ -38,6 +38,7 @@ function render() {
     retencion: Number($("retencion").value),
     cobertura: Number($("cobertura").value),
     comision: Number($("afp").value),
+    atep: $("atep").value === "1",
   }, params);
   tween($("o-retenido"), r.retenido);
   tween($("o-cot"), r.cotizaciones);
@@ -66,7 +67,7 @@ input.addEventListener("input", () => {
   input.value = digits ? Number(digits).toLocaleString("es-CL") : "";
   render();
 });
-["retencion", "cobertura", "afp"].forEach((id) => $(id).addEventListener("change", render));
+["retencion", "cobertura", "afp", "atep"].forEach((id) => $(id).addEventListener("change", render));
 render();
 
 // Navegación lateral: marca la sección visible.

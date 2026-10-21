@@ -82,6 +82,13 @@
               <option value="0.0145">Provida · 1,45%</option>
             </select>
           </div>
+          <div class="field">
+            <label for="atep">ATEP y SANNA (sin verificar)</label>
+            <select id="atep">
+              <option value="0" selected>No incluir</option>
+              <option value="1">Incluir · 0,93%</option>
+            </select>
+          </div>
         </div>
         <dl class="readouts" aria-live="polite">
           <div class="readout"><dt>Retenido en boletas</dt><dd id="o-retenido">$0</dd><small id="o-anual"></small></div>
@@ -89,7 +96,7 @@
           <div class="readout"><dt>Impuesto global complementario</dt><dd id="o-igc">$0</dd><small id="o-tasa"></small></div>
           <div class="readout result" id="o-res-box"><dt id="o-res-label">Te devolverían</dt><dd id="o-res">$0</dd></div>
         </dl>
-        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales (UF de referencia: <span id="o-uf">$41.189</span>). Excluye ATEP, SANNA y otros créditos.</p>
+        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales (UF de referencia: <span id="o-uf">$41.189</span>). Por defecto excluye ATEP, SANNA y otros créditos.</p>
       </section>
       <p class="disclaimer">Ninguno de nosotros es abogado, ni asesor financiero o tributario. Esta información no constituye asesoramiento de ningún tipo; consulta con un profesional.</p>
     </header>
@@ -371,7 +378,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 </tr>
 <tr>
 <td>SIS (seguro de invalidez y sobrevivencia)</td>
-<td>1,62% (tasa vigente desde abril 2026; los independientes la pagan ellos)</td>
+<td>2,00% (tasa vigente desde las remuneraciones de julio 2026; venía de 1,62% desde abril; los independientes la pagan ellos)</td>
 </tr>
 <tr>
 <td>ATEP y SANNA</td>
@@ -514,9 +521,9 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <ul>
 <li>AFP: 10% + 0,46% → $2.008.320</li>
 <li>Salud: 7% → $1.344.000</li>
-<li>SIS: 1,62% → $311.040</li>
-<li><strong>Total cobertura total: ≈ $3,66 millones (~15,3% del bruto)</strong>, muy cerca de lo que ya retuvieron durante el año (14,5% en 2025 = $3,48 M).</li>
-<li>Con cobertura parcial (80%) AFP y salud bajan; el total estimado queda en ≈ $2,99 millones (~12,5%).</li>
+<li>SIS: 2,00% → $384.000</li>
+<li><strong>Total cobertura total: ≈ $3,74 millones (~15,6% del bruto)</strong>, muy cerca de lo que ya retuvieron durante el año (14,5% en 2025 = $3,48 M).</li>
+<li>Con cobertura parcial (80%) AFP y salud bajan; el total estimado queda en ≈ $3,07 millones (~12,8%).</li>
 </ul>
 <p>Lo importante: la retención creciente de la Ley 21.133 se acerca cada año a lo que cuesta la cotización total, así que la "devolución" por boletas se achica.</p>
 <h2 id="stock-optionsrsus"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></svg><span>Stock options/RSUs</span></h2>
@@ -572,6 +579,18 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Tasa del SIS (2,00% desde julio 2026)</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://www.afphabitat.cl/wp-content/uploads/2026/08/Folleto_N29_AfiliadoIndependiente_-agosto2026v2.pdf" target="_blank" rel="noopener">AFP Habitat, folleto ago. 2026</a> y <a href="https://www.teced.cl/noticias/indicadores-previsionales-julio-2026-sis-sube-2" target="_blank" rel="noopener">Teced, indicadores julio 2026</a></td>
+<td>Nada; antes era 1,62% (desde abril 2026)</td>
+</tr>
+<tr>
+<td>Tasas de ATEP básica y SANNA</td>
+<td><span class="st st-pendiente">Pendiente</span></td>
+<td>Habitat solo indica la adicional de ATEP (0% a 3,4% según actividad); la opción del simulador usa 0,93% de referencia</td>
+<td>Confirmar las tasas en la Superintendencia de Seguridad Social</td>
+</tr>
 <tr>
 <td>Tope imponible 2026</td>
 <td><span class="st st-verificado">Verificado</span></td>

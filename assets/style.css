@@ -233,7 +233,7 @@ h1, h2, h3, h4 { font-synthesis: none; }
 .calc-head h2 { display: flex; align-items: center; gap: 0.6rem; }
 .calc-head .ico { stroke: #fff; }
 .calc-head p { margin: 0; font-size: 0.9rem; color: #ffe6e2; }
-.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0.9rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.9rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); }
 .field label { display: block; font-size: 0.9rem; color: var(--muted); margin-bottom: 0.35rem; }
 .field input, .field select {
   width: 100%;

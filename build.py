@@ -119,6 +119,13 @@ __NAV__
               <option value="0.0145">Provida · 1,45%</option>
             </select>
           </div>
+          <div class="field">
+            <label for="atep">ATEP y SANNA (sin verificar)</label>
+            <select id="atep">
+              <option value="0" selected>No incluir</option>
+              <option value="1">Incluir · 0,93%</option>
+            </select>
+          </div>
         </div>
         <dl class="readouts" aria-live="polite">
           <div class="readout"><dt>Retenido en boletas</dt><dd id="o-retenido">$0</dd><small id="o-anual"></small></div>
@@ -126,7 +133,7 @@ __NAV__
           <div class="readout"><dt>Impuesto global complementario</dt><dd id="o-igc">$0</dd><small id="o-tasa"></small></div>
           <div class="readout result" id="o-res-box"><dt id="o-res-label">Te devolverían</dt><dd id="o-res">$0</dd></div>
         </dl>
-        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales (UF de referencia: <span id="o-uf">$41.189</span>). Excluye ATEP, SANNA y otros créditos.</p>
+        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales (UF de referencia: <span id="o-uf">$41.189</span>). Por defecto excluye ATEP, SANNA y otros créditos.</p>
       </section>
       <p class="disclaimer">__DISCLAIMER__</p>
     </header>
