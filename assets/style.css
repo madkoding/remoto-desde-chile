@@ -1,5 +1,14 @@
 /* Remoto desde Chile — tema corporativo claro
    Blanco frío (fondo), Tinta negra, Rojo corporativo (acento) */
+/* DSEG14 Classic Italic (SIL OFL 1.1, ver assets/fonts/DSEG-LICENSE.txt) */
+@font-face {
+  font-family: "DSEG14";
+  src: url("fonts/DSEG14Classic-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --bg: #f5f5f6;
@@ -13,6 +22,7 @@
   --display: "Michroma", "Barlow", system-ui, sans-serif;
   --wide: "Michroma", "Barlow", system-ui, sans-serif;
   --text: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --segment: "DSEG14", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --cut: 18px;
 }
@@ -181,7 +191,7 @@ h1, h2, h3, h4, .brand, .readout dd, article th { font-synthesis: none; }
 .readout { padding: 0.95rem 1.4rem; border-bottom: 1px solid var(--line); }
 .readout:nth-child(-n+2) { border-right: 1px solid var(--line); }
 .readout dt { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.2rem; }
-.readout dd { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.05rem, 1.9vw, 1.3rem); }
+.readout dd { margin: 0; font-family: var(--segment); font-style: italic; font-weight: 400; font-size: clamp(1.05rem, 1.9vw, 1.35rem); letter-spacing: 0.04em; white-space: nowrap; }
 .readout small { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
 .result {
   grid-column: 1 / -1;
@@ -196,7 +206,7 @@ h1, h2, h3, h4, .brand, .readout dd, article th { font-synthesis: none; }
   transition: background-color 0.25s;
 }
 .result dt { color: #d6d7db; }
-.result dd { font-size: clamp(1.35rem, 3vw, 1.9rem); color: #fff; }
+.result dd { font-size: clamp(1.4rem, 3.2vw, 2.1rem); color: #fff; }
 .result.owe { background: var(--red); }
 .result.owe dt { color: #ffe3e6; }
 .calc-note { padding: 0.9rem 1.4rem; font-size: 0.86rem; color: var(--muted); border-top: 1px solid var(--ink); margin: 0; }
