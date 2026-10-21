@@ -45,15 +45,22 @@ const $ = (id) => document.getElementById(id);
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const shown = {};
 
+// Pinta el valor y su "fantasma" (todos los segmentos encendidos) para el display apagado.
+function put(el, n) {
+  const t = clp.format(n);
+  el.textContent = t;
+  el.dataset.ghost = t.replace(/[^.,\s\u00a0]/g, "~");
+}
+
 function tween(el, to) {
   const from = shown[el.id] ?? to;
   shown[el.id] = to;
-  if (reduce || from === to) { el.textContent = clp.format(to); return; }
+  if (reduce || from === to) { put(el, to); return; }
   const t0 = performance.now();
   const dur = 260;
   const step = (t) => {
     const k = Math.min(1, (t - t0) / dur);
-    el.textContent = clp.format(from + (to - from) * (1 - Math.pow(1 - k, 3)));
+    put(el, from + (to - from) * (1 - Math.pow(1 - k, 3)));
     if (k < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
