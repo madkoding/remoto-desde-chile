@@ -39,6 +39,7 @@ Usa commits semánticos (`feat:`, `fix:`, `docs:`, `style:`, `chore:`) y título
 
 ## Recordatorios automáticos
 
+- `dependabot-automerge`: integra solos los PR de Dependabot cuando el CI pasa (versiones mayores solo para GitHub Actions; en npm se revisan a mano).
 - `links`: revisa los enlaces de la guía cada mes y abre un issue si hay rotos.
 - `revision-semestral`: en enero y julio abre un issue para revisar SIS, tope imponible y retención.
 

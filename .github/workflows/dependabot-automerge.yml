@@ -1,0 +1,30 @@
+name: dependabot-automerge
+# Integra automáticamente los PR de Dependabot cuando el CI pasa.
+# Versiones mayores: solo para GitHub Actions; en npm quedan para revisión manual.
+on: pull_request
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  automerge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - id: meta
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Integrar si cumple la política
+        if: steps.meta.outputs.update-type != 'version-update:semver-major' || steps.meta.outputs.package-ecosystem == 'github_actions'
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Con una regla de rama que exija checks, el auto-merge espera al CI.
+          if gh pr merge --auto --squash "$PR_URL"; then
+            exit 0
+          fi
+          # Sin regla de rama: esperar a que terminen los checks y luego integrar.
+          sleep 20
+          gh pr checks "$PR_URL" --watch --fail-fast --interval 10
+          gh pr merge --squash "$PR_URL"
