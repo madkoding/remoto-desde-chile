@@ -157,7 +157,7 @@ def main():
     # Separa la introducción (título, aviso) del cuerpo.
     head, body = text.split("\n## ", 1)
     body = "## " + body
-    disclaimer = "Ninguno de nosotros es abogado, ni asesor financiero o tributario. Esta información no constituye asesoramiento de ningún tipo; consulta con un profesional."
+    disclaimer = "Quienes escribimos esto no somos abogados ni asesores financieros o tributarios. Este contenido es informativo y no reemplaza la asesoría de un profesional."
 
     body = body.replace("- [ ] ", "- ")
     body = re.sub(r"(?m)^  - ", "    - ", body)  # listas anidadas: python-markdown pide 4 espacios
