@@ -207,8 +207,9 @@ h1, h2, h3, h4 { font-synthesis: none; }
   align-items: baseline;
   gap: 1rem;
   flex-wrap: wrap;
-  transition: background-color 0.25s;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
+.result dt, .result dd { transition: color 0.4s ease, text-shadow 0.4s ease; }
 .result { color: var(--ink); }
 .result dt { color: var(--muted); }
 .result dd { font-size: clamp(1.4rem, 3.2vw, 2.1rem); color: var(--ink); text-shadow: 0 1px 2px rgb(18 24 30 / 0.16), 0 4px 10px rgb(18 24 30 / 0.08); }
@@ -227,11 +228,11 @@ article h2 {
   font-size: clamp(1.2rem, 2.3vw, 1.6rem);
   line-height: 1.25;
   margin: 4.5rem 0 1.25rem;
-  padding-top: 1.4rem;
-  border-top: 1px solid var(--line);
+  padding-top: 2.1rem;
+  background: repeating-linear-gradient(-45deg, var(--edge) 0 1px, transparent 1px 6px) top left / 100% 12px no-repeat;
   text-wrap: balance;
 }
-article h2::before { content: ""; position: absolute; top: -3px; left: 0; width: 3.5rem; height: 5px; background: var(--red); }
+article h2::before { content: ""; position: absolute; top: 0; left: 0; width: 4.5rem; height: 12px; background: var(--red); clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%); }
 article h2:first-child { margin-top: 2.5rem; }
 article h3 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; line-height: 1.35; margin: 2.5rem 0 0.75rem; }
 article h4 { font-family: var(--display); font-weight: 400; font-size: 0.92rem; line-height: 1.4; margin: 2rem 0 0.5rem; }
@@ -269,7 +270,7 @@ article th { font-family: var(--text); font-weight: 600; font-size: 0.9rem; back
 article tbody tr:nth-child(even) td { background: var(--bg); }
 article tbody tr:hover td { background: var(--surface); }
 article tr:last-child td { border-bottom: 0; }
-article hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
+article hr { border: 0; height: 12px; background: repeating-linear-gradient(-45deg, var(--edge) 0 1px, transparent 1px 6px); margin: 3rem 0; }
 
 footer {
   border-top: 1px solid var(--line);
