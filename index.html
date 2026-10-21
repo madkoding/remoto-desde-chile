@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remoto desde Chile</title>
+<meta name="description" content="Guía práctica para desarrolladores que trabajan remoto desde Chile: cómo cobrar, emitir boletas, cotizar y declarar impuestos en 2026.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <a class="brand" href="#top">Remoto<br>desde <span>Chile</span></a>
+    <nav aria-label="Secciones">
+      <a href="#encuentra-trabajo">Encuentra trabajo</a>
+      <a href="#cuanto-cobro">¿Cuánto cobro?</a>
+      <a href="#recibe-tu-sueldo">Recibe tu sueldo</a>
+      <a href="#paga-impuestos-salud-y-cotizaciones">Impuestos y cotizaciones</a>
+      <a href="#stock-optionsrsus">Stock options y RSUs</a>
+      <a href="#creditos-con-bancos-hipotecario-de-consumo-etc">Créditos bancarios</a>
+      <a href="#tengo-mas-preguntas">Más preguntas</a>
+      <a href="#pendientes-por-verificar">Pendientes por verificar</a>
+      <a href="#fuentes">Fuentes</a>
+    </nav>
+    <p class="meta">Actualizada en octubre 2026.<br><a href="https://github.com/madkoding/remoto-desde-chile">Código y contribuciones</a></p>
+  </aside>
+  <main id="top">
+    <header class="hero">
+      <h1>Cobra en dólares, cotiza y declara en Chile.</h1>
+      <p class="lead">Guía para desarrolladores que trabajan para el extranjero desde Chile. Las cifras de 2026 vienen del SII y de Previsión Social; lo que no pudimos verificar está marcado.</p>
+      <section class="calc" aria-labelledby="calc-title">
+        <div class="calc-head">
+          <h2 id="calc-title">Simula tu año</h2>
+          <p>Estimación referencial, no reemplaza tu declaración.</p>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label for="mensual">Ingreso bruto mensual (CLP)</label>
+            <input id="mensual" inputmode="numeric" autocomplete="off" value="2.000.000">
+          </div>
+          <div class="field">
+            <label for="retencion">Retención de la boleta</label>
+            <select id="retencion">
+              <option value="0.145">2025 · 14,5%</option>
+              <option value="0.1525" selected>2026 · 15,25%</option>
+              <option value="0.16">2027 · 16%</option>
+              <option value="0.17">2028 · 17%</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cobertura">Cobertura de salud y pensión</label>
+            <select id="cobertura">
+              <option value="1" selected>Total (100%)</option>
+              <option value="0.8">Parcial (80%)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="afp">Comisión de tu AFP</label>
+            <select id="afp">
+              <option value="0.0046" selected>AFP Uno · 0,46%</option>
+              <option value="0.0145">Provida · 1,45%</option>
+            </select>
+          </div>
+        </div>
+        <dl class="readouts" aria-live="polite">
+          <div class="readout"><dt>Retenido en boletas</dt><dd id="o-retenido">$0</dd><small id="o-anual"></small></div>
+          <div class="readout"><dt>Cotizaciones estimadas</dt><dd id="o-cot">$0</dd><small>AFP, salud y SIS</small></div>
+          <div class="readout"><dt>Impuesto global complementario</dt><dd id="o-igc">$0</dd><small id="o-tasa"></small></div>
+          <div class="readout result" id="o-res-box"><dt id="o-res-label">Te devolverían</dt><dd id="o-res">$0</dd></div>
+        </dl>
+        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales. Excluye ATEP, SANNA y otros créditos.</p>
+      </section>
+      <p class="disclaimer">Ninguno de nosotros es abogado, ni asesor financiero o tributario. Esta información no constituye asesoramiento de ningún tipo; consulta con un profesional.</p>
+    </header>
+    <article>
+<h2 id="encuentra-trabajo">Encuentra trabajo</h2>
+<h3 id="formas-de-trabajo">Formas de trabajo</h3>
+<p>A grandes rasgos tienes 3 opciones:</p>
+<ol>
+<li>Trabajar independiente (como <em>contractor</em>), sea freelanceando para varias empresas o para una sola. Algunas empresas te tratarán como un empleado más aunque técnicamente no lo seas, pero probablemente no recibas los beneficios que reciben los locales (aunque desde la <a href="https://www.bcn.cl/leychile/navegar?idNorma=1128420" target="_blank" rel="noopener">Ley 21.133</a> cotizas en el sistema de seguridad social, ver <a href="#paga-impuestos-salud-y-cotizaciones">más abajo</a>).</li>
+<li>Crear una empresa individual en el extranjero y auto-contratarte en esta. Esto puede tener muchos beneficios financieros, en particular si facturas mucho, pero es una opción mucho más engorrosa.</li>
+<li>Trabajar para una empresa chilena que preste servicios a un tercero en el extranjero. Esto te ahorra la pega de buscar tus propios proyectos y clientes, pero tienes que tener cuidado: muchas de estas empresas chilenas funcionan como moledoras de carne, no te pagan si no tienes un proyecto, y cuando lo tienes cortan una buena tajada (40% a veces!)</li>
+</ol>
+<p>Esta guía considera principalmente la primera opción.</p>
+<h3 id="preparacion">Preparación</h3>
+<p>Hablar inglés es casi indispensable, no hay vuelta a eso -- pero la buena noticia es que no tienes que hablar muy bien. En particular, a <strong>nadie</strong> le importa si tienes acento. El mundo del desarrollo está lleno de hablantes no-nativos.</p>
+<p>Por lo demás: <em>créete el cuento</em>. El nivel del rubro en Chile no es tan bajo como se cree, y si llegaste hasta acá al menos tienes más curiosidad que el promedio.</p>
+<p>Eso no quiere decir que tener un buen currículum no ayude. En especial con posiciones remotas las empresas prefieren perfiles más senior, que trabajen más independientemente. Si eres muy novato, considera buscar una empresa que te sirva de trampolín: una empresa con renombre, aunque no sea remota. Una vez que la tengas en tu CV, se hace mucho más fácil.</p>
+<p>Para la entrevista: prepárate. Postula a cosas que de verdad te interesen, para tener tiempo de estudiarlos. Aprende sobre la empresa y su producto y ensaya la entrevista en tu cabeza. Sigue yendo a entrevistas aunque tengas pega fija, para mantenerte ejercitado, y quien sabe, quizás encuentras algo que te tinque más.</p>
+<h3 id="donde-encontrar-trabajo">Dónde encontrar trabajo</h3>
+<p>Hay muchísimas plataformas online para buscar trabajo remoto, pero los mejores trabajos se siguen consiguiendo por <em>networking</em>: recomendación de tu red de conocidos o en foros, slacks, etc. Busca uno de tu tecnología o nicho y pregunta por el canal de #jobs.</p>
+<p><strong>Ojo con la geografía:</strong> un aviso que dice "remote" muchas veces está limitado a EE.UU., Europa o un país específico. Revisa siempre desde qué países contrata la empresa (en RemoteOK, por ejemplo, aparece como "Hires Remotely From") y si ofrece contrato de empleo, de contractor o freelance.</p>
+<ul>
+<li><a href="https://devschile.cl/" target="_blank" rel="noopener">devschile</a> tiene un canal #trabajos con bastante énfasis en lo remoto.</li>
+<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a> publica mensualmente un hilo de "Who's hiring". ⚠️ Los links a herramientas para navegarlo que tenía la versión anterior estaban obsoletos; búscalas con "hn who is hiring search".</li>
+<li><a href="https://weworkremotely.com" target="_blank" rel="noopener">We Work Remotely</a> es, en sus palabras, la comunidad de trabajo remoto más grande del mundo; muy fuerte en tecnología.</li>
+<li><a href="https://remoteok.com" target="_blank" rel="noopener">RemoteOK</a> fue creada por <a href="https://x.com/levelsio" target="_blank" rel="noopener">Pieter Levels</a>, quien también creó <a href="https://nomadlist.com" target="_blank" rel="noopener">NomadList</a>.</li>
+<li><a href="https://remote.co" target="_blank" rel="noopener">Remote.co</a> concentra empleadores remote-first. (No confundir con <a href="https://remote.com" target="_blank" rel="noopener">Remote.com</a>, que es una plataforma de contratación y pagos para empleadores.)</li>
+<li><a href="https://remotive.com" target="_blank" rel="noopener">Remotive</a> y <a href="https://www.workingnomads.com" target="_blank" rel="noopener">Working Nomads</a> permiten filtrar por región y especialidad.</li>
+<li><a href="https://wellfound.com" target="_blank" rel="noopener">Wellfound</a> concentra oportunidades en startups.</li>
+<li>Plataformas con foco en Latinoamérica: <a href="https://torre.ai" target="_blank" rel="noopener">Torre</a>, <a href="https://www.weremoto.com" target="_blank" rel="noopener">WeRemoto</a> y <a href="https://www.getonbrd.com" target="_blank" rel="noopener">Get on Board</a>.</li>
+<li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a> sigue siendo punto de partida, filtrando por "Remote" y país.</li>
+<li><a href="https://glassdoor.com" target="_blank" rel="noopener">Glassdoor</a> permite que empleados actuales y antiguos evalúen a las empresas. Se puede filtrar por empresas solo remoto, tipo de contrato, ratings, etc.</li>
+</ul>
+<h2 id="cuanto-cobro">¿Cuánto cobro?</h2>
+<p>Harto. Por favor, aprovecha que hay demanda de desarrolladores y cobra caro, nos beneficia a todes que "desarrollador/a en Chile" no sea sinónimo de bajo presupuesto.</p>
+<p>Si no tienes idea cuánto es "harto", estas son nuestras sugerencias (USD brutos anuales) ⚠️ <em>rangos de la versión original, no re-validados con datos de mercado 2026</em>:</p>
+<ul>
+<li>Junior, literalmente recién formado: 70.000 dólares al año</li>
+<li>Senior, capaz de trabajar independiente y consistentemente entregar buenos resultados: 90.000 dólares al año</li>
+<li>Staff o Team Lead, además de los aspectos técnicos de un senior, con habilidades de liderazgo: 110.000 dólares al año</li>
+<li>Senior Staff+... espero que a estas alturas ya tengas una idea</li>
+</ul>
+<p>Para contrastar: los sueldos publicados para roles <strong>locales</strong> en Chile están bastante por debajo (por ejemplo, avisos de Full Stack Senior en torno a CLP 2,4 millones mensuales en adelante, según guías salariales 2026). Esa diferencia es justamente el punto de trabajar para el extranjero.</p>
+<p>Parte negociando con un 20-30% más de lo que quieres.</p>
+<p>Si trabajas como freelancer por hora o día, cobra el doble, tienes que pagar las horas que pasarás buscando proyectos y el tiempo que te dejarán esperando.</p>
+<p>Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección <a href="#paga-impuestos-salud-y-cotizaciones">"Paga impuestos, salud y cotizaciones"</a>. Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar <a href="https://impuestos.netlify.app/" target="_blank" rel="noopener">esta calculadora</a> (<a href="https://github.com/muzk/impuestos" target="_blank" rel="noopener">Repo</a>) ⚠️ <em>verifica que use las cifras 2026 de esta guía</em>, o el <a href="https://previsionsocial.gob.cl/simulador/" target="_blank" rel="noopener">simulador oficial de cotización</a>.</p>
+<h2 id="recibe-tu-sueldo">Recibe tu sueldo</h2>
+<h3 id="wise">Wise</h3>
+<p><a href="https://wise.com/cl" target="_blank" rel="noopener">Wise</a> (antes Transferwise) te da una cuenta con datos bancarios locales en varias monedas (USD, EUR, GBP, etc.) donde tu empleador puede depositar como si tuvieras una cuenta en EE.UU. Luego tú puedes transferir a tu cuenta en Chile.</p>
+<p>Novedades: Wise <strong>inició operaciones oficialmente en Chile en julio de 2026</strong>, con transferencias desde CLP a más de 40 divisas y la cuenta global (abrirla y mantener saldo no tiene costo; recibir pagos locales en USD/EUR/GBP tampoco, según su tarifario).</p>
+<p>Ventajas:</p>
+<ul>
+<li>relativamente barato (conversión a tipo de cambio medio de mercado más una comisión transparente)</li>
+<li>rápido</li>
+<li>todo online</li>
+</ul>
+<p>Limitaciones:</p>
+<ul>
+<li>⚠️ no entrega tarjeta física para residentes en Chile (según una comparativa de Global66; verifica si cambió con el lanzamiento local)</li>
+<li>tu empleador debe poder pagar a una cuenta local de EE.UU./Eurozona (casi siempre puede)</li>
+</ul>
+<h3 id="otras-alternativas-fintech">Otras alternativas (fintech)</h3>
+<ul>
+<li><strong><a href="https://www.payoneer.com" target="_blank" rel="noopener">Payoneer</a></strong>: pensada para cobrar desde marketplaces (Upwork, Fiverr, etc.). Una estrategia común es recibir en Payoneer y traspasar a Wise para convertir.</li>
+<li><strong><a href="https://www.deel.com" target="_blank" rel="noopener">Deel</a></strong>: es una plataforma de contratos y pagos para empresas; tu empleador también tiene que estar en Deel. Útil si ya te contratan por ahí.</li>
+<li><strong><a href="https://global66.com/cl/freelancers/" target="_blank" rel="noopener">Global66 – Cuenta Global</a></strong>: ofrece números de cuenta en EE.UU. y Europa a tu nombre, retiro por ACH desde plataformas como Deel. ⚠️ Ojo: los servicios de divisas se centralizan en Global 81 SpA, que <strong>no está fiscalizada por la CMF</strong> según su propio sitio. Evalúa el riesgo antes de mover montos grandes.</li>
+<li><strong>PayPal</strong>: suele ser caro (margen cambiario de varios puntos porcentuales sobre el tipo de cambio medio). Úsalo solo si el cliente no te deja otra opción.</li>
+</ul>
+<h3 id="cuenta-en-el-extranjero">Cuenta en el extranjero</h3>
+<p>Limitaciones:</p>
+<ul>
+<li>difícil (o imposible) de abrir, dependiendo del país.</li>
+<li>no es una solución completa ya que igual tienes que enviar el dinero a Chile de alguna manera.</li>
+</ul>
+<p>Ventajas:</p>
+<ul>
+<li>probablemente más simple para tu empleador.</li>
+<li>puedes ahorrar/invertir en el extranjero.</li>
+</ul>
+<h3 id="transferencia-bancaria-internacional">Transferencia Bancaria Internacional</h3>
+<p>El empleador te envía un pago (conocido por los bancos como "remesa") el cual llega a Chile directamente a tu banco. Para que te puedan enviar este dinero a tu nombre, tienes que entregar los siguientes datos a tu empleador:</p>
+<pre><code>Name: Tu nombre completo
+ID: XX.XXX.XXX-X (tu rut)
+Beneficiary Account: xx-xxx-xxxxx-xx (el número de tu cuenta)
+Bank: &lt;nombre del banco&gt;, p.ej. Banco de Chile - Santiago de Chile
+Branch: &lt;dirección del banco&gt;, p.ej. Ahumada 251 - Santiago
+Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
+</code></pre>
+<p>Algunos bancos proporcionan información adicional (como datos de un banco intermediario) y códigos <a href="https://www.investopedia.com/terms/s/swift.asp" target="_blank" rel="noopener">SWIFT</a> asociados, por lo que es recomendable consultar con tu ejecutivo.</p>
+<p><strong>Tip</strong>: No es muy común recibir pagos del extranjero, por lo que muchas veces los ejecutivos no tienen idea de esta información. Para evitar confusiones, siempre nombrar la palabra "remesa" al referirse a tu pago.</p>
+<p>Puedes recibir tus pagos en cualquier cuenta corriente o vista (ejemplo: <a href="https://www.bancoestado.cl/imagenes/_personas/productos/cuentas/cuenta-rut-home.asp" target="_blank" rel="noopener">Cuenta RUT</a>) que tengas. Sin embargo, siempre consulta con tu ejecutivo de cuentas para proceder. Otra opción es obtener cuenta corriente en dólares y recibir el dinero ahí.</p>
+<p>En ambos casos, los datos que debes enviar son los mismos, pero el funcionamiento (cómo obtienes finalmente tu dinero) es distinto.</p>
+<h4 id="comisiones-por-recibir-tu-dinero">Comisiones por recibir tu dinero</h4>
+<p>Una transferencia SWIFT puede costar del orden de <strong>35-40 USD en total</strong> entre bancos intermediarios y banco receptor, sin contar el margen en el tipo de cambio. Tu pago puede verse afecto por dos comisiones:</p>
+<ol>
+<li>El cobro de los bancos intermediarios, que gira en torno a los 20 USD y que puede que se lo cobren a tu empleador.<ul>
+<li><strong>Tip</strong>: intenta negociar que esto lo pague tu empleador y que no te lo descuenten del sueldo.</li>
+</ul>
+</li>
+<li>La comisión que te cobra el banco chileno por recibir el dinero: depende del Banco. En algunos casos, esta comisión es negociable si recibes periódicamente dinero.</li>
+</ol>
+<p>⚠️ <strong>Las tablas de comisiones por banco de la versión anterior eran imágenes de 2020-2024 y no pudimos re-verificarlas.</strong> Datos puntuales recientes:</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Banco</th>
+<th>Dato</th>
+<th>Fuente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Santander</td>
+<td>Desde 10 USD + IVA por recibir, más 15 USD + IVA por abono automático (varía según monto)</td>
+<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise Chile</a></td>
+</tr>
+<tr>
+<td>Scotiabank</td>
+<td>Cuenta en dólares sin costo de mantención</td>
+<td><a href="https://www.global66.com/blog/cuenta-corriente-en-moneda-extranjera-en-chile/" target="_blank" rel="noopener">Global66</a></td>
+</tr>
+<tr>
+<td>BICE</td>
+<td>Cuenta en dólares sin costo adicional (con cuenta corriente GO BICE)</td>
+<td><a href="https://www.rankia.cl/blog/mejores-cuentas-bancarias/3243484-cuales-son-mejores-cuentas-corrientes-para-2019" target="_blank" rel="noopener">Rankia</a></td>
+</tr>
+<tr>
+<td>Banco de Chile, BancoEstado, Bci, Itaú</td>
+<td>Consultar tarifario vigente del banco</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Cómo contribuir:</strong> si recibes remesas, un PR con el tarifario actual de tu banco (con link a la fuente oficial y fecha de vigencia) es de mucho valor.</p>
+</blockquote>
+<h4 id="cuenta-corriente-o-cuenta-vista-en-chile-en-pesos-chilenos-clp"><em>Cuenta Corriente</em> o <em>Cuenta Vista en Chile</em>, en pesos chilenos (CLP)</h4>
+<p>Una vez le pasaste los datos de transferencia a tu empleador:</p>
+<ul>
+<li>te harán una transferencia del pago (en dólares) de su banco al tuyo.</li>
+<li>el pago se demora 1 o dos días hábiles "en llegar".</li>
+</ul>
+<p>Ahora el dinero está a tu nombre, en Chile y en tu banco... pero no en tu cuenta. Recuerda que te llegaron USD, así que no puedes pasarlo directamente a tu cuenta en CLP. ¿Qué hacer?</p>
+<ol>
+<li>Un buen banco con tecnología de punta (😂) te enviará un correo notificándote del pago. En otros casos, tienes que usar <em>polling</em> (😭) y llamar hasta que te digan que llegó</li>
+<li>Ahora que ya sabes que están los dólares, debes ir a una sucursal.<ul>
+<li>OJO 👀: pregunta en qué sucursal te pueden atender. BancoEstado tiene <a href="https://www.bancoestado.cl/imagenes/_personas/noticias/detalle/sucursales-chilenos-exterior.asp" target="_blank" rel="noopener">sucursales especiales</a> para esto.</li>
+<li>En el caso del <strong>Bci</strong>: Si bien el proceso es igual de manual que en los otros bancos, Bci permite hacerlo de manera remota, poniéndote en contacto con la ejecutiva que está a cargo de las operaciones en moneda extranjera, quien te enviará una carta para completar donde se define el tipo de cambio y las cuentas en las que se abonará el monto y de donde se descontará la comisión. ⚠️ <em>Basado en experiencias personales anteriores; confirma que siga vigente.</em></li>
+</ul>
+</li>
+<li>En el mesón de atención de cliente, solicita tus dólares.<ul>
+<li>OJO 👀: en BancoEstado tienes que hablar con el ejecutivo de "Inversiones".</li>
+</ul>
+</li>
+<li>El ejecutivo te generará un voucher que debes pagar en caja (son las comisiones del banco, ver sección anterior)<ul>
+<li>En algunos bancos, como el Itaú, te descuentan directamente de tu cuenta corriente</li>
+</ul>
+</li>
+<li>Con el número que ya sacaste, espera tu turno en caja.</li>
+<li>En caja, paga la comisión del banco y aquí puedes pedir los dólares en efectivo o que te abonen los dólares a tu cuenta o pagar tu tarjeta de crédito. Los dólares en efectivo te sirven por si quieres venderlo a alguien que te dé más dinero por ellos.</li>
+</ol>
+<p>Nota personal: creo que en todos los bancos va a ser parecido. Si vas a recibir muchos sueldos, es mejor recibir en una cuenta corriente en dólares, o usar una cuenta tipo Wise y evitar este trámite.</p>
+<h4 id="cuenta-corriente-en-chile-en-dolares">Cuenta corriente en Chile, en dólares</h4>
+<p>Una vez le pasaste los datos de transferencia a tu empleador:</p>
+<ul>
+<li>te harán una transferencia del pago (en dólares) de su banco al tuyo.</li>
+<li>el pago se demora 1 o dos días hábiles "en llegar".</li>
+<li>el pago llega y estará disponible en tu cuenta corriente en dólares ✌️</li>
+<li>ahora puedes vender dólares, y los pesos chilenos serán depositados en tu cuenta corriente</li>
+<li>también puedes pagar tu cuenta internacional (ej: tus compras de AliExpress o Uber) directamente con tus dólares 😉</li>
+</ul>
+<p>Es muy cómodo que el pago te llegue y que más encima puedas venderlos sin ir a una oficina con depósito a tu cuenta en CLP.</p>
+<p>Eso sí, es importante tener en cuenta que:</p>
+<ul>
+<li>tener cuenta corriente en dólares <strong>no te salva de la comisión que tu banco te pueda cobrar</strong> por el hecho de recibir tu dinero.</li>
+<li>algunos bancos no tienen implementada la funcionalidad en sus páginas o apps de vender dólares, por lo que para vender tienes que enviarle un correo a tu ejecutivo.</li>
+<li>el tipo de cambio suele ser mejor que el que te dan en caja.</li>
+<li>la cuenta corriente podría tener costos de mantención asociados.</li>
+</ul>
+<p><strong>¿Cómo abrir cuenta corriente en dólares?</strong></p>
+<p>Dile a tu ejecutivo que quieres abrir cuenta en dólares porque recibes tu sueldo en USD via remesa internacional. Él te dirá como proceder. Algunas consideraciones:</p>
+<ul>
+<li>es normal que te pidan demostrar la "legalidad" de esos pagos (puedes mostrar un contrato).</li>
+<li>es normal que te pidan recibos de pagos anteriores si ya has recibido pagos anteriormente.</li>
+<li>si te pagan mensualmente, díselo a tu ejecutivo. Darle el contexto completo siempre ayuda.</li>
+</ul>
+<p>Bancos que ofrecen cuenta corriente en dólares: Santander, Banco de Chile, BICE, Scotiabank, Itaú, Bci y BancoEstado. ⚠️ Los costos de mantención de la tabla anterior eran de enero 2020; consulta el tarifario vigente.</p>
+<h4 id="tipo-de-cambio">Tipo de Cambio</h4>
+<p>El tipo de cambio depende de cómo vendas tus dólares:</p>
+<ol>
+<li>si vendes en sucursal, el precio tiende a ser más conservador (y por ende menor) a otros medios.<ul>
+<li>a veces conviene cruzar la calle para ir a venderlos al Banco de al frente (mientras no haya mucha fila...), o a una casa de cambios.</li>
+</ul>
+</li>
+<li>si vendes en página web desde tu cuenta corriente (o llamando a tu ejecutivo) el precio varía según mercado. Es decir, un mismo día pueden haber muchas variaciones. Compara siempre con una referencia como <a href="https://valor-dolar.cl/" target="_blank" rel="noopener">valor-dolar.cl</a>.</li>
+<li>con Wise u otras fintech, el tipo de cambio es cercano al medio de mercado más una comisión explícita; compara el monto final que recibes.</li>
+</ol>
+<h4 id="tldr">TLDR;</h4>
+<ul>
+<li>Tu empleador te puede enviar USD a tu cuenta chilena, o puedes usar una cuenta tipo Wise para evitar la mayoría de las fricciones.</li>
+<li>Por transferencia bancaria hay comisiones que le cobran a tu empleador por enviar (~20 USD) y a ti por recibir (varía por banco).</li>
+<li>Puedes recibir tu pago en cualquier tipo de cuenta (incluso cuenta RUT) aunque en cuentas vistas pueden haber límites de montos.</li>
+<li>Si recibes en cuenta corriente en pesos chilenos, tienes que ir a sucursal a retirar los dólares 🙃, a menos que tengas una cuenta en el Bci.</li>
+<li>Si recibes en cuenta corriente en dólares, el abono se hace automáticamente y puedes vender los dólares a través de las plataformas web o llamando a tu ejecutiv@. El tipo de cambio varía con el mercado.</li>
+<li>Para abrir cuenta en dólares te pueden pedir ciertos requisitos, preguntar a ejecutiv@.</li>
+</ul>
+<h2 id="paga-impuestos-salud-y-cotizaciones">Paga impuestos, salud y cotizaciones</h2>
+<h3 id="emision-de-boletas">Emisión de boletas</h3>
+<p>Suponiendo que la empresa para la que trabajas no tiene presencia legal en Chile, debes emitir boleta de honorarios via <a href="https://www.sii.cl" target="_blank" rel="noopener">la página web del SII</a>. Elige la opción que el contribuyente emisor (tú) retiene el Pago Provisional Mensual (PPM).</p>
+<p>El SII tiene un RUT especial para empresas extranjeras: <strong>44.444.446-0</strong>. En el campo de región puedes poner cualquier cosa, pero la dirección debería ser la real de la empresa.</p>
+<p>Si te pagan en dólares, usa la <a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm" target="_blank" rel="noopener">tabla dólar-peso del SII</a> para convertir el total. ⚠️ <em>El link sigue el patrón de años anteriores; confirma que abra.</em></p>
+<h3 id="impuestos-mensuales">Impuestos mensuales</h3>
+<p>Si tú retuviste el Pago Provisional Mensual al emitir la boleta, debes declarar (<strong>y, muy importante, pagar!</strong>) impuestos mensuales usando el formulario F29 en <a href="https://www.sii.cl" target="_blank" rel="noopener">la web del SII</a>. La página calcula el monto por ti a partir de las boletas electrónicas del mes anterior, y luego puedes pagar en línea con tu banco. El plazo es el día 12 del mes siguiente (o el 20 si pagas en línea con el banco; confirma en SII). Cuando se habla de "devolución de impuestos" este es el dinero que se te devuelve, si sobra algo luego de tramitar tu declaración de impuestos anual.</p>
+<p>La retención sobre cada boleta (por Ley 21.133) sube todos los años:</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>2024</th>
+<th>2025</th>
+<th><strong>2026</strong></th>
+<th>2027</th>
+<th>2028</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13,75%</td>
+<td>14,5%</td>
+<td><strong>15,25%</strong></td>
+<td>16%</td>
+<td>17%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ejemplo 2026: boleta de $100.000 → retención $15.250 → recibes $84.750. (<a href="https://www.sii.cl/noticias/2025/261225noti01smn.htm" target="_blank" rel="noopener">Fuente SII</a>)</p>
+<h3 id="cotizaciones-obligatorias-ley-21133">Cotizaciones obligatorias (Ley 21.133)</h3>
+<p>Esta parte cambió mucho respecto de la versión anterior, donde estaba marcada como TODO.</p>
+<p><strong>¿Quién debe cotizar?</strong> Si durante el año anterior emitiste boletas de honorarios por un monto bruto total igual o superior a <strong>5 ingresos mínimos mensuales</strong> (para la Operación Renta 2026: <strong>$2.767.765</strong> en boletas emitidas en 2025). Se eximen:</p>
+<ul>
+<li>hombres que al 1 de enero de 2018 tenían 55 años o más, y mujeres con 50 años o más</li>
+<li>pensionados (excepto por invalidez parcial)</li>
+<li>personas afiliadas a un régimen distinto a las AFP</li>
+<li>quienes emitieron boletas por menos de 5 ingresos mínimos mensuales</li>
+</ul>
+<p><strong>¿Cómo se paga?</strong> Se calcula en la Operación Renta (abril) y el pago lo hace la Tesorería General de la República (TGR) a las instituciones previsionales, imputando tu retención. Te da cobertura anual <strong>desde el 1 de julio hasta el 30 de junio</strong> del año siguiente. Ya no es necesario pagar "AFP y salud a mano".</p>
+<p><strong>Base imponible:</strong> el <strong>80% del total de tus boletas del año anterior</strong>, con un tope anual equivalente a 12 veces el tope imponible mensual (≈90 UF mensuales en 2026 para AFP y salud; ⚠️ la cifra exacta varía entre fuentes, 89,9-90 UF; confirma en la <a href="https://www.spensiones.cl" target="_blank" rel="noopener">Superintendencia de Pensiones</a>).</p>
+<p><strong>¿Qué se paga?</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Tasa sobre la renta imponible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pensión (AFP)</td>
+<td>10% + comisión de la AFP</td>
+</tr>
+<tr>
+<td>Comisión AFP</td>
+<td>0,46% (AFP Uno, la más barata) hasta 1,45% (Provida)</td>
+</tr>
+<tr>
+<td>Salud</td>
+<td>7% (Fonasa o Isapre)</td>
+</tr>
+<tr>
+<td>SIS (seguro de invalidez y sobrevivencia)</td>
+<td>1,62% (tasa vigente desde abril 2026; los independientes la pagan ellos)</td>
+</tr>
+<tr>
+<td>ATEP y SANNA</td>
+<td>variable (0% a 3,4% adicional según actividad); aporte menor</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Nota sobre AFP:</strong> quienes no están afiliados y los nuevos afiliados van a <strong>AFP Uno</strong> (ganadora de la licitación 2025-2027) y deben quedarse al menos dos años.</p>
+<p><strong>Cobertura total o parcial.</strong> Puedes elegir cotizar sobre el 100% de tu renta imponible (cobertura total), o una cobertura parcial transitoria:</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Operación Renta</th>
+<th>2026</th>
+<th>2027</th>
+<th>2028</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>% de la renta imponible en cobertura parcial</td>
+<td>80%</td>
+<td>90% ⚠️</td>
+<td>desaparece (100%)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Con cobertura parcial pagas menos y recibes una parte mayor de la devolución, pero <strong>tendrás menos cobertura en licencias médicas y subsidios maternales</strong> y ahorras menos para tu pensión. El SIS, ATEP y SANNA siempre se calculan sobre el 100%.</p>
+<p><strong>Simulador oficial:</strong> <a href="https://previsionsocial.gob.cl/simulador/" target="_blank" rel="noopener">previsionsocial.gob.cl/simulador</a>.</p>
+<h3 id="declaracion-anual">Declaración anual</h3>
+<p>La "operación renta" es el cálculo y pago de impuestos y cotizaciones que cada año tienes que hacer del año anterior. Por ejemplo en abril de 2026 pagas impuestos y cotizaciones sobre lo que ganaste el año 2025.</p>
+<p>El cálculo del monto exacto es bastante complicado, pero <strong>simplificando mucho</strong> la idea general es que de la suma de lo que pagaste mensualmente (retenciones) se le restan los impuestos y las cotizaciones. Si sobra, te devuelven. Si falta, te lo cobran.</p>
+<p>El SII te prepara una propuesta de formulario F22 con la información que tiene de tus pagos mensuales y lo que le informan diversas instituciones.</p>
+<p>La empresa para la que trabajas en el extranjero tendrá que declarar lo que te paga también. Es probable que para esto te pidan una declaración de que no pagas impuestos allá, y que tú te haces responsable por pagar tus impuestos en Chile. En el caso de empresas de EEUU esto se hace con <a href="https://www.irs.gov/pub/irs-pdf/fw8ben.pdf" target="_blank" rel="noopener">el formulario W-8BEN</a>.</p>
+<h4 id="impuestos-en-la-declaracion-anual">Impuestos en la declaración anual</h4>
+<p>Hay distintos tipos de impuestos anuales, pero si tu ingreso principal es por boletas a una empresa extranjera, te interesa el <em>Impuesto Global Complementario</em> (IGC).</p>
+<p>El impuesto se aplica sobre tu "base imponible", que se calcula como <code>BASE_IMPONIBLE = SUELDO_BRUTO - GASTOS</code>, donde:</p>
+<ul>
+<li><code>SUELDO_BRUTO</code> es tu ingreso bruto anual por honorarios.</li>
+<li><code>GASTOS</code>: por defecto, gastos presuntos del <strong>30% de tu ingreso bruto con tope de 15 UTA</strong> (≈ $12,5 millones para el AT 2026). El tope se alcanza con ingresos brutos de 50 UTA (≈ $41,7 millones). No puedes usar gastos presuntos y efectivos a la vez.</li>
+</ul>
+<p>Con tu imponible en mano, ya puedes estimar cuánto pagarás de impuestos: <code>IMPUESTOS = BASE_IMPONIBLE * FACTOR - REBAJA</code></p>
+<p>El <code>FACTOR</code> y <code>REBAJA</code> salen de la "tabla impuesto global complementario". Para el <strong>Año Tributario 2026</strong> (rentas del año 2025) la renta anual está exenta hasta 13,5 UTA = $11.265.804, y la UTA de diciembre 2025 equivale a $834.504 (calculada a partir de ese monto; UTM dic. 2025 = $69.542). Los factores y rebajas, expresados en UTA, son los mismos que usa el SII en su tabla mensual en UTM; abajo van convertidos a pesos con esa UTA:</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>desde (UTA)</th>
+<th>hasta (UTA)</th>
+<th>desde ($)</th>
+<th>hasta ($)</th>
+<th>factor</th>
+<th>a rebajar ($)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>13,5</td>
+<td>0</td>
+<td>11.265.804</td>
+<td>exento</td>
+<td>0</td>
+</tr>
+<tr>
+<td>13,5</td>
+<td>30</td>
+<td>11.265.804</td>
+<td>25.035.120</td>
+<td>0,04</td>
+<td>450.632</td>
+</tr>
+<tr>
+<td>30</td>
+<td>50</td>
+<td>25.035.120</td>
+<td>41.725.200</td>
+<td>0,08</td>
+<td>1.452.037</td>
+</tr>
+<tr>
+<td>50</td>
+<td>70</td>
+<td>41.725.200</td>
+<td>58.415.280</td>
+<td>0,135</td>
+<td>3.746.923</td>
+</tr>
+<tr>
+<td>70</td>
+<td>90</td>
+<td>58.415.280</td>
+<td>75.105.360</td>
+<td>0,23</td>
+<td>9.296.375</td>
+</tr>
+<tr>
+<td>90</td>
+<td>120</td>
+<td>75.105.360</td>
+<td>100.140.480</td>
+<td>0,304</td>
+<td>14.854.171</td>
+</tr>
+<tr>
+<td>120</td>
+<td>310</td>
+<td>100.140.480</td>
+<td>258.696.240</td>
+<td>0,35</td>
+<td>19.460.633</td>
+</tr>
+<tr>
+<td>310</td>
+<td>y más</td>
+<td>258.696.240</td>
+<td>—</td>
+<td>0,40</td>
+<td>32.395.445</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>La tabla del <strong>AT 2027</strong> (rentas de 2026) se actualiza con la UTA de diciembre 2026. Revisa siempre la <a href="https://www.sii.cl" target="_blank" rel="noopener">tabla oficial del SII</a> del año en que declares. Notar el nuevo tramo del 40% que no existía en la versión de 2020.</p>
+</blockquote>
+<p><strong>Ejemplo 1.</strong> Ganaste $24.000.000 brutos en 2025 ($2 millones al mes):</p>
+<ul>
+<li>Gastos presuntos: 30% = $7.200.000 (bajo el tope de $12,5 M).</li>
+<li>Base imponible: $16.800.000 → tramo del 4%.</li>
+<li>Impuesto: <code>16.800.000 × 0,04 − 450.632 = $221.368</code> (≈ 0,9% efectivo).</li>
+</ul>
+<p><strong>Ejemplo 2.</strong> Si eres 🚀 y ganaste $60.000.000:</p>
+<ul>
+<li>Gastos: el 30% ($18 M) supera el tope, quedas en 15 UTA = $12.517.560.</li>
+<li>Base imponible: $47.482.440 → tramo del 13,5%.</li>
+<li>Impuesto: <code>47.482.440 × 0,135 − 3.746.923 = $2.663.206</code> (≈ 4,4% efectivo).</li>
+</ul>
+<p>Estos montos son el IGC <em>antes</em> de imputar tus retenciones y cotizaciones; sirven como orden de magnitud.</p>
+<h4 id="cotizaciones-en-la-declaracion-anual-ejemplo">Cotizaciones en la declaración anual: ejemplo</h4>
+<p>Con los $24.000.000 brutos de 2025, tu renta imponible para cotizar es 80% = $19.200.000. Estimación con AFP Uno (0,46%), sin ATEP/SANNA:</p>
+<ul>
+<li>AFP: 10% + 0,46% → $2.008.320</li>
+<li>Salud: 7% → $1.344.000</li>
+<li>SIS: 1,62% → $311.040</li>
+<li><strong>Total cobertura total: ≈ $3,66 millones (~15,3% del bruto)</strong>, muy cerca de lo que ya retuvieron durante el año (14,5% en 2025 = $3,48 M).</li>
+<li>Con cobertura parcial (80%) AFP y salud bajan; el total estimado queda en ≈ $2,99 millones (~12,5%).</li>
+</ul>
+<p>Lo importante: la retención creciente de la Ley 21.133 se acerca cada año a lo que cuesta la cotización total, así que la "devolución" por boletas se achica.</p>
+<h2 id="stock-optionsrsus">Stock options/RSUs</h2>
+<p>Primero, nuevamente el disclaimer: Estas cosas son complicadas y puedes perder <strong>mucha</strong> plata invirtiendo y/o pagando impuestos. Si tienes stock options o algo así, asume que todo lo que dice aquí es falso y habla con profesionales financieros y tributarios.</p>
+<p>Stock options y RSUs son beneficios que te dan algunas empresas como complemento de tu sueldo. La idea es que si a la empresa le va bien, tú también ganas.</p>
+<p>Los stock options en general son entregados por startups, y consisten en la <em>opción</em> de comprar acciones a un precio determinado, el llamado <em>strike price</em>. En caso de que la empresa crezca, se asume que el valor real de las acciones irá aumentando mientras el strike price se mantiene. Si el startup falla (que es probable!) o su valor no aumenta, las opciones <strong>no valen nada</strong>.</p>
+<p>Por ejemplo te podrían ofrecer 30.000 options con un strike price de $1 cuando entras a trabajar. 4 años después, la empresa se vende (o entra a la bolsa) y sus acciones valen $5. En principio, esto significa que puedes <em>ejercer</em> tus opciones por $30.000 y venderlas por $150.000, ganando $120.000, menos impuestos.</p>
+<p>¿Por qué "en principio"? Porque hay muchos factores que pueden cambiar esto. Por ejemplo, en algunos casos la empresa tiene que levantar capital en malas condiciones y se ve obligada a emitir <em>preferred stock</em> a los nuevos inversionistas. Luego la empresa se vende y los empleados con acciones comunes y corrientes no reciben un peso. Como dije, es complicado, asesórate.</p>
+<p>Además, típicamente no te dan todas las opciones o RSUs inmediatamente, sino que te las van entregando gradualmente en un proceso que se llama <a href="https://carta.com/blog/what-is-stock-vesting/" target="_blank" rel="noopener">vesting</a>.</p>
+<p>Para ejercer tus stock options eventualmente tendrás que tener dólares (o la moneda en la que se vendan las acciones), para poder pagarle a tu empresa. Si quieres poder hacerlo, probablemente te conviene ir ahorrando dólares desde un comienzo y encontrar una manera de transferir que no sea excesivamente cara, usando uno de los métodos descritos en "Recibe tu sueldo" pero a la inversa.</p>
+<p>Las RSUs en general son entregadas por empresas que ya son públicas o más establecidas. Es parecido a tener un stock option con strike price de $0, esto es, no tienes que ejercerlas, te dan las acciones directamente.</p>
+<h2 id="creditos-con-bancos-hipotecario-de-consumo-etc">Créditos con Bancos (hipotecario, de consumo, etc).</h2>
+<p>⚠️ <em>Esta sección no pudo re-verificarse con fuentes oficiales; son criterios de bancos que cambian con frecuencia.</em></p>
+<p>Como trabajador remoto para una empresa de USA (sin contrato con una empresa chilena) eres considerado como <strong>TRABAJADOR INDEPENDIENTE</strong>, aunque seas en la práctica dependiente.</p>
+<p>Para los bancos, es muy probable que te consideren "más riesgoso" solo por el hecho de ser trabajador independiente. Lo cual hace sentido si pensamos que ellos, en general, tienen ingresos variables e históricamente no se han pagado sus cotizaciones previsionales (por eso ahora lo hicieron obligatorio 😉).</p>
+<p>En consecuencia, los bancos te exigirán harta información de respaldo para cosas como <strong>CRÉDITOS HIPOTECARIOS</strong>.</p>
+<h3 id="como-calculan-tu-sueldo-liquido-para-prestarte-plata-creditos-hipotecarios">Cómo calculan tu sueldo líquido para prestarte plata (Créditos hipotecarios)</h3>
+<p>¿Recuerdas que el SII calcula los impuestos que tienes que pagar considerando solo el 70% de tu ingreso bruto (porque descuenta 30% de gastos presuntos)?</p>
+<p>Bueno, dice la leyenda que los bancos hacen algo parecido para calcular tu líquido para cosas como créditos hipotecarios. Así que si ganas $2.000.000, el banco considerará que tu sueldo líquido es $1.400.000.</p>
+<p>Considera que tu dividendo (lo que pagas mensualmente como cuota de tu crédito hipotecario) no puede superar el 25% de tu líquido. Es decir, si ganas $2.000.000, tu líquido es $1.400.000 y por ende tu dividendo máximo es $350.000.</p>
+<p>De todas formas, esta restricción te la pueden subir gracias al "comité evaluador" del banco. El comité evaluador tomará cualquier evidencia que diga "sí, esta persona tiene pinta de ser buen/mal cliente" para tomar su decisión.</p>
+<h3 id="que-cosas-te-piden-para-un-credito">Qué cosas te piden para un crédito</h3>
+<p>¿Recuerdas que eres independiente y por ende más riesgoso?</p>
+<p>Bueno, el banco te podría pedir cosas como:</p>
+<ul>
+<li>Últimas 2 declaraciones de renta (es decir, 2 años de trabajo como independiente).</li>
+<li>Últimas 6 boletas de honorario (o mejor dicho, los últimos 6 meses de boletas).</li>
+</ul>
+<p>Lo cual puede parecer mucho, sobre todo cuando estás partiendo.</p>
+<h3 id="que-cosas-puedes-usar-a-tu-favor-para-verte-menos-riesgoso-para-un-credito-hipotecario">Qué cosas puedes usar a tu favor (para verte menos riesgoso para un crédito hipotecario)</h3>
+<p>Para demostrar que eres menos riesgoso, puedes usar lo siguiente:</p>
+<ul>
+<li>Cotizaciones pagadas al día (ahora obligatorias vía Operación Renta). Tu certificado de cotizaciones del F22 ayuda a verte "más serio" para el banco.</li>
+<li>Contrato, incluso si es para una empresa gringa te podría ayudar.</li>
+<li>Poca variación de tus boletas de honorarios. Si te pagan X dólares mensuales siempre, estás bien 👍 (tu sueldo variará de acuerdo al dólar). Ahora, si un mes ganas 100 y el otro mes ganas 2.000 ahí ya es distinto.</li>
+<li>Título Universitario, sobre todo si es de una universidad "tradicional". Esto ayuda sobre todo si evalúas un banco donde no tienes cuenta, ya que te podrían dar un crédito solo para ganarte como cliente.</li>
+<li>Mayor pie al que te piden. Esto demuestra que tienes capacidad de ahorro, y de paso, disminuye el dividendo.</li>
+<li>Tener al menos una declaración de renta donde se vea que tu sueldo como independiente es estable.</li>
+</ul>
+<h2 id="tengo-mas-preguntas">Tengo más preguntas</h2>
+<p>Pásate por el canal #remoto de <a href="https://devschile.cl/" target="_blank" rel="noopener">el slack de devschile</a>.</p>
+<h2 id="pendientes-por-verificar">Pendientes por verificar</h2>
+<ul>
+<li>Rangos de sueldo en USD (sección "¿Cuánto cobro?"): sin fuente 2026 de mercado remoto.</li>
+<li>Tarifas de recepción de remesas por banco (BICE, Bci, Banco de Chile, BancoEstado, Itaú, Scotiabank, Santander) con fecha de vigencia.</li>
+<li>Costos de mantención de cuenta corriente en USD por banco.</li>
+<li>Tope imponible anual exacto en UF para independientes 2026 (89,9 vs 90 UF).</li>
+<li>Porcentaje de cobertura parcial para la Operación Renta 2027 (90% según el calendario original).</li>
+<li>Plazos F29 (día 12 vs 20) y link a tabla de dólar SII 2026.</li>
+<li>Condiciones de Wise en Chile (tarjeta física, límites) tras su lanzamiento local de julio 2026.</li>
+<li>Sección de créditos hipotecarios.</li>
+<li>Herramientas para navegar "Who's hiring" de Hacker News y calculadora <code>impuestos.netlify.app</code>.</li>
+</ul>
+<h2 id="fuentes">Fuentes</h2>
+<ul>
+<li><a href="https://www.sii.cl/noticias/2025/261225noti01smn.htm" target="_blank" rel="noopener">SII: retención boletas de honorarios 2026</a></li>
+<li><a href="https://www.chileatiende.gob.cl/fichas/12016-cotizacion-de-trabajadores-que-emiten-boletas-de-honorarios" target="_blank" rel="noopener">ChileAtiende: cotización de trabajadores que emiten boletas de honorarios</a></li>
+<li><a href="https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm" target="_blank" rel="noopener">SII: Impuesto Único de Segunda Categoría 2026 (factores y rebajas en UTM)</a></li>
+<li><a href="https://www.rankia.cl/blog/sii/2457838-impuesto-global-complementario-tabla-calculo-ejemplos" target="_blank" rel="noopener">Rankia: Impuesto Global Complementario 2026</a></li>
+<li><a href="https://www.rankia.cl/blog/fondos-pensiones-afp/3395890-comisiones-afp-cuanto-cobra-cada" target="_blank" rel="noopener">Rankia: comisiones AFP 2026</a></li>
+<li><a href="https://previsionsocial.gob.cl/wp-content/uploads/2026/05/05-FICHA-QUE-DICE-LA-LEY.pdf" target="_blank" rel="noopener">Subsecretaría de Previsión Social: ficha Ley de honorarios</a></li>
+<li><a href="https://chocale.cl/2026/07/wise-inicio-operaciones-en-chile-transferencias-de-dinero-internacional-40-divisas/" target="_blank" rel="noopener">Chocale: Wise inicia operaciones en Chile (jul. 2026)</a></li>
+<li><a href="https://www.global66.com/blog/?p=23563" target="_blank" rel="noopener">Global66: cuenta multimoneda para freelancers</a></li>
+<li><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise: bancos que reciben transferencias internacionales en Chile</a></li>
+<li><a href="https://www.weremoto.com/blog/las-mejores-plataformas-para-encontrar-trabajo-remoto-en-2026-como-elegir-desde-latam" target="_blank" rel="noopener">WeRemoto: plataformas de trabajo remoto 2026 desde LATAM</a></li>
+<li>Guía original: <a href="https://github.com/devschile/remoto-desde-chile" target="_blank" rel="noopener">devschile/remoto-desde-chile</a></li>
+</ul>
+    </article>
+    <footer>
+      <p>Basada en <a href="https://github.com/devschile/remoto-desde-chile">devschile/remoto-desde-chile</a>, un trabajo colaborativo de la comunidad. ¿Falta un dato o está desactualizado? <a href="https://github.com/madkoding/remoto-desde-chile">Abre un pull request</a>.</p>
+      <p>Para más preguntas, pásate por el canal #remoto del Slack de <a href="https://devschile.cl/">devschile</a>.</p>
+    </footer>
+  </main>
+</div>
+<script type="module" src="assets/calc.js"></script>
+</body>
+</html>
