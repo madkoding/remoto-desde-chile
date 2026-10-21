@@ -1,45 +1,10 @@
-// Simulador referencial. Parámetros: ver README.md ("Paga impuestos, salud y cotizaciones").
-// Tabla IGC: Año Tributario 2026 (UTA dic. 2025). Tope imponible ≈ 90 UF mensuales.
-const UTA = 834504;
-const UF = 40828;
-const TOPE_ANUAL = 90 * 12 * UF;
-const SIS = 0.0162;
-const TRAMOS = [
-  [13.5, 0, 0],
-  [30, 0.04, 0.54],
-  [50, 0.08, 1.74],
-  [70, 0.135, 4.49],
-  [90, 0.23, 11.14],
-  [120, 0.304, 17.8],
-  [310, 0.35, 23.32],
-  [Infinity, 0.4, 38.82],
-];
+// Interfaz del simulador. La lógica vive en simulador.js.
+import { simular, DEFAULTS } from "./simulador.js";
 
-const igc = (base) => {
-  const u = base / UTA;
-  for (const [hasta, factor, rebaja] of TRAMOS) {
-    if (u <= hasta) return Math.max(0, base * factor - rebaja * UTA);
-  }
-  return 0;
-};
+let params = { ...DEFAULTS };
 
 const clp = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 const pct = (n) => (n * 100).toLocaleString("es-CL", { maximumFractionDigits: 2 }) + "%";
-
-export function simular({ mensual, retencion, cobertura, comision }) {
-  const anual = mensual * 12;
-  const retenido = anual * retencion;
-  const imponible = Math.min(anual * 0.8, TOPE_ANUAL);
-  const base = imponible * cobertura;
-  const afp = base * (0.1 + comision);
-  const salud = base * 0.07;
-  const sis = imponible * SIS;
-  const cotizaciones = afp + salud + sis;
-  const gastos = Math.min(anual * 0.3, 15 * UTA);
-  const impuesto = igc(anual - gastos);
-  const resultado = retenido - cotizaciones - impuesto;
-  return { anual, retenido, cotizaciones, impuesto, resultado };
-}
 
 const $ = (id) => document.getElementById(id);
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -73,7 +38,7 @@ function render() {
     retencion: Number($("retencion").value),
     cobertura: Number($("cobertura").value),
     comision: Number($("afp").value),
-  });
+  }, params);
   tween($("o-retenido"), r.retenido);
   tween($("o-cot"), r.cotizaciones);
   tween($("o-igc"), r.impuesto);
@@ -83,6 +48,17 @@ function render() {
   $("o-anual").textContent = "Ingreso anual " + clp.format(r.anual);
   $("o-tasa").textContent = "Impuesto efectivo " + pct(r.anual ? r.impuesto / r.anual : 0);
 }
+
+// UF de referencia: la actualiza un workflow en assets/params.json; si falla, se usa el valor por defecto.
+fetch("assets/params.json", { cache: "no-cache" })
+  .then((r) => (r.ok ? r.json() : null))
+  .then((p) => {
+    if (p && p.uf > 0) { params = { ...params, uf: p.uf }; }
+    const el = $("o-uf");
+    if (el) el.textContent = clp.format(params.uf) + (p && p.fecha ? " al " + p.fecha.split("-").reverse().join("-") : "");
+    render();
+  })
+  .catch(() => {});
 
 const input = $("mensual");
 input.addEventListener("input", () => {

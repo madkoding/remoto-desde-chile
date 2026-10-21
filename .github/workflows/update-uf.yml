@@ -1,0 +1,24 @@
+name: update-uf
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # cada lunes
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  uf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leer la UF vigente (mindicador.cl)
+        run: |
+          curl -fsS --retry 3 https://mindicador.cl/api/uf > uf.json
+          jq -e '.serie[0].valor > 0' uf.json > /dev/null
+          jq '{uf: .serie[0].valor, fecha: (.serie[0].fecha | .[0:10]), fuente: "mindicador.cl"}' uf.json > assets/params.json
+          rm uf.json
+      - name: Commit si cambió
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/params.json
+          git diff --cached --quiet || git commit -m "chore: actualizar UF de referencia" && git push

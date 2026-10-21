@@ -126,7 +126,7 @@ __NAV__
           <div class="readout"><dt>Impuesto global complementario</dt><dd id="o-igc">$0</dd><small id="o-tasa"></small></div>
           <div class="readout result" id="o-res-box"><dt id="o-res-label">Te devolverían</dt><dd id="o-res">$0</dd></div>
         </dl>
-        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales. Excluye ATEP, SANNA y otros créditos.</p>
+        <p class="calc-note">Usa la tabla del Año Tributario 2026, gastos presuntos del 30% (tope 15 UTA) y un tope imponible de 90 UF mensuales (UF de referencia: <span id="o-uf">$41.189</span>). Excluye ATEP, SANNA y otros créditos.</p>
       </section>
       <p class="disclaimer">__DISCLAIMER__</p>
     </header>
