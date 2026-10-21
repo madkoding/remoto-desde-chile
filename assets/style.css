@@ -10,8 +10,8 @@
   --line: #cfd0d4;
   --red: #c8001a;
   --red-ink: #ffffff;
-  --display: "Saira", "Barlow", system-ui, sans-serif;
-  --wide: "Michroma", "Saira", system-ui, sans-serif;
+  --display: "Michroma", "Barlow", system-ui, sans-serif;
+  --wide: "Michroma", "Barlow", system-ui, sans-serif;
   --text: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --cut: 18px;
@@ -128,13 +128,15 @@ main { min-width: 0; }
 .hero h1 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(2rem, 4.6vw, 3.3rem);
-  line-height: 1.04;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.2;
   letter-spacing: -0.01em;
-  margin: 0 0 1rem;
-  max-width: 19ch;
+  margin: 0 0 1.1rem;
+  max-width: 24ch;
   text-wrap: balance;
 }
+/* Michroma tiene un solo peso: no simular negritas */
+h1, h2, h3, h4, .brand, .readout dd, article th { font-synthesis: none; }
 .hero .lead { max-width: 58ch; font-size: 1.15rem; color: var(--muted); margin: 0 0 1.75rem; }
 
 /* ---------- Simulador ---------- */
@@ -155,7 +157,7 @@ main { min-width: 0; }
   flex-wrap: wrap;
   align-items: baseline;
 }
-.calc-head h2 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; margin: 0; }
+.calc-head h2 { font-family: var(--display); font-weight: 400; font-size: 0.95rem; margin: 0; }
 .calc-head h2::before { content: ""; display: inline-block; width: 0.6rem; height: 0.6rem; background: var(--red); margin-right: 0.6rem; }
 .calc-head p { margin: 0; font-size: 0.9rem; color: #c8c9ce; }
 .fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0.9rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); }
@@ -179,7 +181,7 @@ main { min-width: 0; }
 .readout { padding: 0.95rem 1.4rem; border-bottom: 1px solid var(--line); }
 .readout:nth-child(-n+2) { border-right: 1px solid var(--line); }
 .readout dt { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.2rem; }
-.readout dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: clamp(1.3rem, 2.7vw, 1.7rem); }
+.readout dd { margin: 0; font-family: var(--display); font-weight: 400; font-size: clamp(1.05rem, 1.9vw, 1.3rem); }
 .readout small { display: block; font-size: 0.85rem; color: var(--muted); margin-top: 0.15rem; }
 .result {
   grid-column: 1 / -1;
@@ -194,7 +196,7 @@ main { min-width: 0; }
   transition: background-color 0.25s;
 }
 .result dt { color: #d6d7db; }
-.result dd { font-size: clamp(1.7rem, 4vw, 2.4rem); color: #fff; }
+.result dd { font-size: clamp(1.35rem, 3vw, 1.9rem); color: #fff; }
 .result.owe { background: var(--red); }
 .result.owe dt { color: #ffe3e6; }
 .calc-note { padding: 0.9rem 1.4rem; font-size: 0.86rem; color: var(--muted); border-top: 1px solid var(--ink); margin: 0; }
@@ -205,9 +207,9 @@ article { padding: 1rem clamp(1.25rem, 5vw, 4rem) 4rem; max-width: 52rem; }
 article h2 {
   position: relative;
   font-family: var(--display);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
-  line-height: 1.1;
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.3vw, 1.6rem);
+  line-height: 1.25;
   margin: 4.5rem 0 1.25rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--ink);
@@ -215,8 +217,8 @@ article h2 {
 }
 article h2::before { content: ""; position: absolute; top: -3px; left: 0; width: 3.5rem; height: 5px; background: var(--red); }
 article h2:first-child { margin-top: 2.5rem; }
-article h3 { font-family: var(--display); font-weight: 700; font-size: 1.35rem; margin: 2.5rem 0 0.75rem; }
-article h4 { font-family: var(--display); font-weight: 700; font-size: 1.1rem; margin: 2rem 0 0.5rem; }
+article h3 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; line-height: 1.35; margin: 2.5rem 0 0.75rem; }
+article h4 { font-family: var(--display); font-weight: 400; font-size: 0.92rem; line-height: 1.4; margin: 2rem 0 0.5rem; }
 article p, article li { max-width: 68ch; }
 article li { margin: 0.35rem 0; }
 article ul, article ol { padding-left: 1.3rem; }
@@ -247,7 +249,7 @@ article blockquote p { margin: 0; }
 .scroll { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--ink); background: var(--panel); }
 article table { border-collapse: collapse; width: 100%; font-size: 0.97rem; min-width: 32rem; }
 article th, article td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-article th { font-family: var(--display); font-weight: 700; font-size: 0.95rem; background: var(--ink); color: #fff; border-bottom: 0; }
+article th { font-family: var(--display); font-weight: 400; font-size: 0.78rem; background: var(--ink); color: #fff; border-bottom: 0; }
 article tbody tr:nth-child(even) td { background: var(--bg); }
 article tbody tr:hover td { background: var(--surface); }
 article tr:last-child td { border-bottom: 0; }
