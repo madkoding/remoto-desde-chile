@@ -266,7 +266,7 @@ Esta parte cambió mucho respecto de la versión anterior, donde estaba marcada 
 | Pensión (AFP) | 10% + comisión de la AFP |
 | Comisión AFP | 0,46% (AFP Uno, la más barata) hasta 1,45% (Provida) |
 | Salud | 7% (Fonasa o Isapre) |
-| SIS (seguro de invalidez y sobrevivencia) | 1,62% (tasa vigente desde abril 2026; los independientes la pagan ellos) |
+| SIS (seguro de invalidez y sobrevivencia) | 2,00% (tasa vigente desde las remuneraciones de julio 2026; venía de 1,62% desde abril; los independientes la pagan ellos) |
 | ATEP y SANNA | variable (0% a 3,4% adicional según actividad); aporte menor |
 
 **Nota sobre AFP:** quienes no están afiliados y los nuevos afiliados van a **AFP Uno** (ganadora de la licitación 2025-2027) y deben quedarse al menos dos años.
@@ -337,9 +337,9 @@ Con los $24.000.000 brutos de 2025, tu renta imponible para cotizar es 80% = $19
 
 - AFP: 10% + 0,46% → $2.008.320
 - Salud: 7% → $1.344.000
-- SIS: 1,62% → $311.040
-- **Total cobertura total: ≈ $3,66 millones (~15,3% del bruto)**, muy cerca de lo que ya retuvieron durante el año (14,5% en 2025 = $3,48 M).
-- Con cobertura parcial (80%) AFP y salud bajan; el total estimado queda en ≈ $2,99 millones (~12,5%).
+- SIS: 2,00% → $384.000
+- **Total cobertura total: ≈ $3,74 millones (~15,6% del bruto)**, muy cerca de lo que ya retuvieron durante el año (14,5% en 2025 = $3,48 M).
+- Con cobertura parcial (80%) AFP y salud bajan; el total estimado queda en ≈ $3,07 millones (~12,8%).
 
 Lo importante: la retención creciente de la Ley 21.133 se acerca cada año a lo que cuesta la cotización total, así que la "devolución" por boletas se achica.
 
@@ -415,6 +415,8 @@ Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o direct
 
 | Dato | Estado | Fuente consultada | Qué falta |
 | ---- | ------ | ----------------- | --------- |
+| Tasa del SIS (2,00% desde julio 2026) | Verificado | [AFP Habitat, folleto ago. 2026](https://www.afphabitat.cl/wp-content/uploads/2026/08/Folleto_N29_AfiliadoIndependiente_-agosto2026v2.pdf) y [Teced, indicadores julio 2026](https://www.teced.cl/noticias/indicadores-previsionales-julio-2026-sis-sube-2) | Nada; antes era 1,62% (desde abril 2026) |
+| Tasas de ATEP básica y SANNA | Pendiente | Habitat solo indica la adicional de ATEP (0% a 3,4% según actividad); la opción del simulador usa 0,93% de referencia | Confirmar las tasas en la Superintendencia de Seguridad Social |
 | Tope imponible 2026 | Verificado | [Superintendencia de Pensiones](https://spensiones.cl/portal/institucional/594/w3-article-16921.html): 90 UF (AFP y salud), 135,2 UF (cesantía) | Nada |
 | Cobertura parcial OR2027 (90%) | Verificado | [AFP Habitat, folleto ago. 2026](https://www.afphabitat.cl/wp-content/uploads/2026/08/Folleto_N29_AfiliadoIndependiente_Agosto2026.pdf) y [Previsión Social](https://previsionsocial.gob.cl/wp-content/uploads/2026/05/05-FICHA-QUE-DICE-LA-LEY.pdf) | Nada |
 | Plazos del F29 y tabla del dólar SII 2026 | Verificado | [Oficina Virtual](https://www.oficinavirtual.cl/blog/2026/3/19/paso-a-paso-pago-iva) (día 20 por internet, día 12 en papel) y [SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm) | Nada |
