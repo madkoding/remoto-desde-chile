@@ -24,4 +24,4 @@ Guía para desarrolladores que trabajan para el extranjero desde Chile: cómo co
 - Cada mes se revisan los enlaces, y en enero y julio se abre un issue para revisar SIS, tope imponible y retención.
 - Lo que no se pudo verificar está marcado en la guía y listado, con su estado, en la sección "Pendientes por verificar".
 
-Basada en [devschile/remoto-desde-chile](https://github.com/devschile/remoto-desde-chile), un trabajo colaborativo de la comunidad. Esta información no constituye asesoramiento legal, financiero ni tributario.
+Esta información no constituye asesoramiento legal, financiero ni tributario.

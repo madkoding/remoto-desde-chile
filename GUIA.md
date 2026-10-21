@@ -40,7 +40,6 @@ Hay muchísimas plataformas online para buscar trabajo remoto, pero los mejores 
 
 **Ojo con la geografía:** un aviso que dice "remote" muchas veces está limitado a EE.UU., Europa o un país específico. Revisa siempre desde qué países contrata la empresa (en RemoteOK, por ejemplo, aparece como "Hires Remotely From") y si ofrece contrato de empleo, de contractor o freelance.
 
-- [devschile](https://devschile.cl/) tiene un canal #trabajos con bastante énfasis en lo remoto.
 - [Hacker News](https://news.ycombinator.com/) publica mensualmente un hilo de "Who's hiring". Para navegarlo con filtros (palabra clave, tecnología y "Remote"), usa [HNHiring](https://hnhiring.com), un índice activo con los hilos desde 2018.
 - [We Work Remotely](https://weworkremotely.com) es, en sus palabras, la comunidad de trabajo remoto más grande del mundo; muy fuerte en tecnología.
 - [RemoteOK](https://remoteok.com) fue creada por [Pieter Levels](https://x.com/levelsio), quien también creó [NomadList](https://nomadlist.com).
@@ -405,10 +404,6 @@ Para demostrar que eres menos riesgoso, puedes usar lo siguiente:
 - Mayor pie al que te piden. Esto demuestra que tienes capacidad de ahorro, y de paso, disminuye el dividendo.
 - Tener al menos una declaración de renta donde se vea que tu sueldo como independiente es estable.
 
-## Tengo más preguntas
-
-Pásate por el canal #remoto de [el slack de devschile](https://devschile.cl/).
-
 ## Pendientes por verificar
 
 Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o directa; "Parcial" = hay datos con fecha pero no vigentes de forma oficial; "Pendiente" = no se pudo confirmar.
@@ -450,4 +445,3 @@ Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o direct
 - [El Desconcierto: requisitos de crédito hipotecario (may. 2026)](https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775)
 - [SII: UTM y UTA 2025](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm)
 - [tax-cl en npm](https://www.npmjs.com/package/tax-cl)
-- Guía original: [devschile/remoto-desde-chile](https://github.com/devschile/remoto-desde-chile)

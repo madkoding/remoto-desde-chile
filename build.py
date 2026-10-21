@@ -12,7 +12,6 @@ import markdown
 ROOT = Path(__file__).parent
 SRC = ROOT / "GUIA.md"
 OUT = ROOT / "index.html"
-UPSTREAM = "https://github.com/devschile/remoto-desde-chile"
 REPO = "https://github.com/madkoding/remoto-desde-chile"
 
 ICONS = {'search': '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>', 'coin': '<circle cx="12" cy="12" r="9.5"/><path d="M12 6.5v11M15 9.5c0-1.2-1.3-2-3-2s-3 .8-3 2 1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2-3-.8-3-2"/>', 'wallet': '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/>', 'bank': '<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M12 3l9 5H3z"/>', 'trend': '<path d="m3 17 6-6 4 4 8-8M15 7h6v6"/>', 'home': '<path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/>', 'help': '<circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.2a2.6 2.6 0 1 1 3.6 2.4c-.7.4-1.1 1-1.1 1.8M12 17h.01"/>', 'check': '<path d="m9 11 3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>', 'book': '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>', 'calc': '<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h3.5"/>', 'brief': '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>', 'clip': '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>', 'pin': '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>', 'swap': '<path d="M4 8h15l-4-4M20 16H5l4 4"/>', 'phone': '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>', 'globe': '<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/>', 'send': '<path d="m21 3-9.5 9.5M21 3l-6.5 18-3-8.5L3 9.5z"/>', 'file': '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>', 'cal': '<rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/>', 'shield': '<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>', 'list': '<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>', 'star': '<path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.3l1.1-6.2L3 9.7l6.2-.9z"/>'}
@@ -21,7 +20,7 @@ ICONS = {'search': '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>', 
 ICON_FOR = [
     ("encuentra-trabajo", "search"), ("cuanto-cobro", "coin"), ("recibe-tu-sueldo", "wallet"),
     ("paga-impuestos", "bank"), ("stock-options", "trend"), ("creditos-con-bancos", "home"),
-    ("tengo-mas-preguntas", "help"), ("pendientes", "check"), ("fuentes", "book"),
+    ("pendientes", "check"), ("fuentes", "book"),
     ("formas-de-trabajo", "brief"), ("preparacion", "clip"), ("donde-encontrar", "pin"),
     ("wise", "swap"), ("otras-alternativas", "phone"), ("cuenta-en-el-extranjero", "globe"),
     ("transferencia-bancaria", "send"), ("emision-de-boletas", "file"), ("impuestos-mensuales", "cal"),
@@ -142,8 +141,7 @@ __NAV__
 __BODY__
     </article>
     <footer>
-      <p>Basada en <a href="__UPSTREAM__">devschile/remoto-desde-chile</a>, un trabajo colaborativo de la comunidad. ¿Falta un dato o está desactualizado? <a href="__REPO__">Abre un pull request</a>.</p>
-      <p>Para más preguntas, pásate por el canal #remoto del Slack de <a href="https://devschile.cl/">devschile</a>.</p>
+      <p>¿Falta un dato o está desactualizado? <a href="__REPO__">Abre un pull request</a>.</p>
     </footer>
   </main>
 </div>
@@ -181,7 +179,6 @@ def main():
         "paga-impuestos-salud-y-cotizaciones": "Impuestos y cotizaciones",
         "stock-optionsrsus": "Stock options y RSUs",
         "creditos-con-bancos-hipotecario-de-consumo-etc": "Créditos bancarios",
-        "tengo-mas-preguntas": "Más preguntas",
     }
     nav = "\n".join(
         f'      <a href="#{t["id"]}">{html.escape(short.get(t["id"], t["name"]))}</a>'
@@ -189,7 +186,7 @@ def main():
     )
 
     page = (TEMPLATE.replace("__NAV__", nav).replace("__BODY__", out)
-            .replace("__DISCLAIMER__", disclaimer).replace("__CALCICON__", icon("calc")).replace("__REPO__", REPO).replace("__UPSTREAM__", UPSTREAM))
+            .replace("__DISCLAIMER__", disclaimer).replace("__CALCICON__", icon("calc")).replace("__REPO__", REPO))
     OUT.write_text(page, encoding="utf-8")
     print(f"index.html: {len(page):,} bytes, {len(md.toc_tokens)} secciones")
 
