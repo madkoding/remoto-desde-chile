@@ -70,7 +70,7 @@ Parte negociando con un 20-30% más de lo que quieres.
 
 Si trabajas como freelancer por hora o día, cobra el doble, tienes que pagar las horas que pasarás buscando proyectos y el tiempo que te dejarán esperando.
 
-Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección ["Paga impuestos, salud y cotizaciones"](#paga-impuestos-salud-y-cotizaciones). Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar [esta calculadora](https://impuestos.netlify.app/) ([Repo](https://github.com/muzk/impuestos)) (es una herramienta de terceros; su página no declara el año tributario que usa, así que contrasta el resultado con el simulador de esta guía), o el [simulador oficial de cotización](https://previsionsocial.gob.cl/simulador/).
+Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección ["Paga impuestos, salud y cotizaciones"](#paga-impuestos-salud-y-cotizaciones). Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar [esta calculadora](https://impuestos.netlify.app/) ([Repo](https://github.com/muzk/impuestos)) (es una herramienta de terceros construida sobre la librería `tax-cl`, cuya configuración por defecto corresponde a la Operación Renta 2025 con tope de 87,8 UF; para 2026 usa el simulador de esta guía), o el [simulador oficial de cotización](https://previsionsocial.gob.cl/simulador/).
 
 ## Recibe tu sueldo
 
@@ -422,9 +422,11 @@ Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o direct
 | Herramientas para "Who's hiring" | Verificado | [HNHiring](https://hnhiring.com) | Nada |
 | Rangos de sueldo en USD | Parcial | [Bloomberg Línea (Deel), 2024](https://www.bloomberglinea.com/tecnologia/demanda-de-ingenieros-de-software-se-mantiene-en-latam-salarios-inician-en-los-us48000-al-ano/) y [Talently, 2026](https://talently.tech/blog/salarios-programadores-por-rol-seniority-latam/) | Un estudio 2026 específico de contratación remota desde Chile |
 | Requisitos de crédito hipotecario | Parcial | [El Desconcierto, mayo 2026](https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775) | Criterios publicados por cada banco; la regla del 70% sigue sin fuente |
-| Comisiones de recepción y mantención por banco | Parcial | [Wise, ago. 2024](https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile) y [Rankia, ene. 2025](https://www.rankia.cl/blog/mejores-cuentas-bancarias/4968740-mejores-cuentas-corrientes-dolares) | Tarifarios vigentes de BICE, Bci, Itaú y Scotiabank |
+| Comisiones de recepción y mantención por banco | Parcial | [Wise, ago. 2024](https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile) y [Rankia, ene. 2025](https://www.rankia.cl/blog/mejores-cuentas-bancarias/4968740-mejores-cuentas-corrientes-dolares) | Tarifarios vigentes de BICE, Bci, Itaú y Scotiabank; en octubre de 2026 no encontramos cifras públicas en fuentes accesibles, consúltalas con tu ejecutivo |
 | Wise en Chile: tarjeta y límites | Pendiente | [Wise, comunicado del 21 jul. 2026](https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/) | El comunicado no los menciona |
-| Calculadora `impuestos.netlify.app` | Pendiente | [Sitio](https://impuestos.netlify.app/) | Carga solo con JavaScript y no declara el año tributario |
+| Calculadora `impuestos.netlify.app` | Parcial | Código de [tax-cl 1.4.2](https://www.npmjs.com/package/tax-cl), la librería que usa | Su configuración por defecto es la Operación Renta 2025 (tope 87,8 UF, SIS 1,49%); el sitio desplegado no pudo abrirse para confirmar qué versión corre |
+| Impuesto global complementario del simulador | Verificado | Contraste con `tax-cl` configurada para OR 2026 y [UTA de dic. 2025 en el SII](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm) ($834.504) | Nada: ambos entregan $221.368 y $2.663.206 en los ejemplos |
+| UF con que se convierte el tope anual | Pendiente | [ChileAtiende](https://www.chileatiende.gob.cl/fichas/12016-cotizacion-de-trabajadores-que-emiten-boletas-de-honorarios) no la indica | Confirmar en la Ley 21.133 o en la Superintendencia de Pensiones; el simulador usa la UF vigente como referencia |
 
 ## Fuentes
 
@@ -444,4 +446,6 @@ Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o direct
 - [Wise: lanzamiento en Chile (jul. 2026)](https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/)
 - [HNHiring](https://hnhiring.com)
 - [El Desconcierto: requisitos de crédito hipotecario (may. 2026)](https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775)
+- [SII: UTM y UTA 2025](https://www.sii.cl/valores_y_fechas/utm/utm2025.htm)
+- [tax-cl en npm](https://www.npmjs.com/package/tax-cl)
 - Guía original: [devschile/remoto-desde-chile](https://github.com/devschile/remoto-desde-chile)
