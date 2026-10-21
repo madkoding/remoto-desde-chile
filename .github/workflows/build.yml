@@ -2,7 +2,7 @@ name: build
 on:
   push:
     branches: [main]
-    paths: [README.md, build.py]
+    paths: [GUIA.md, build.py]
 permissions:
   contents: write
 jobs:

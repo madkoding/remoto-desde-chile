@@ -7,7 +7,7 @@ import { simular, igc, DEFAULTS, TRAMOS, SIS, ATEP_SANNA } from "../assets/simul
 const UTA = 834504;
 const AFP_UNO = 0.0046;
 
-// Los ejemplos de la guía (README, "Declaración anual") y el cálculo de la librería
+// Los ejemplos de la guía (GUIA.md, "Declaración anual") y el cálculo de la librería
 // tax-cl configurada para la Operación Renta 2026 coinciden en estos IGC.
 test("IGC del ejemplo 1 (base $16.800.000)", () => {
   assert.equal(Math.round(igc(16_800_000, UTA)), 221_368);
@@ -55,9 +55,9 @@ test("ATEP y SANNA suman 0,93% de la renta imponible cuando se incluyen", () => 
   assert.equal(Math.round(con.cotizaciones - sin.cotizaciones), Math.round(24_000_000 * 0.8 * ATEP_SANNA));
 });
 
-// El README es la fuente de la guía: su tabla de tramos debe coincidir con el simulador.
-test("los tramos del README coinciden con TRAMOS", () => {
-  const readme = readFileSync(new URL("../README.md", import.meta.url), "utf8");
+// GUIA.md es la fuente de la guía: su tabla de tramos debe coincidir con el simulador.
+test("los tramos de la guía coinciden con TRAMOS", () => {
+  const readme = readFileSync(new URL("../GUIA.md", import.meta.url), "utf8");
   const filas = [...readme.matchAll(/^\| ([\d,]+) \| ([\d,]+|y más) \| [\d.]+ \| ([\d.]+|—) \| (exento|[\d,]+) \| ([\d.]+) \|$/gm)];
   assert.equal(filas.length, TRAMOS.length);
   filas.forEach((f, i) => {

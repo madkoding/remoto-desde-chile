@@ -1,5 +1,5 @@
 // Lógica pura del simulador (sin DOM), para poder probarla con `node --test`.
-// Parámetros: ver README.md ("Paga impuestos, salud y cotizaciones").
+// Parámetros: ver GUIA.md ("Paga impuestos, salud y cotizaciones").
 // Tabla IGC: Año Tributario 2026 (UTA dic. 2025). Tope imponible: 90 UF mensuales.
 // La UF de referencia se actualiza en assets/params.json (workflow update-uf).
 // Valores por defecto; en el sitio se sobrescriben con assets/params.json (ver tasas allí, con fecha y fuente).

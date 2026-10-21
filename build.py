@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera index.html a partir de README.md (fuente única de la guía).
+"""Genera index.html a partir de GUIA.md (fuente única de la guía).
 
 Uso: python3 build.py   (requiere: pip install markdown)
 """
@@ -10,7 +10,7 @@ from pathlib import Path
 import markdown
 
 ROOT = Path(__file__).parent
-SRC = ROOT / "README.md"
+SRC = ROOT / "GUIA.md"
 OUT = ROOT / "index.html"
 UPSTREAM = "https://github.com/devschile/remoto-desde-chile"
 REPO = "https://github.com/madkoding/remoto-desde-chile"

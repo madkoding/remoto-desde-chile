@@ -1,7 +1,7 @@
 name: test
 on:
   push:
-    paths: ["assets/**", "tests/**", "package*.json", "README.md"]
+    paths: ["assets/**", "tests/**", "package*.json", "GUIA.md"]
   pull_request:
 jobs:
   test:
