@@ -41,3 +41,7 @@ Usa commits semánticos (`feat:`, `fix:`, `docs:`, `style:`, `chore:`) y título
 
 - `links`: revisa los enlaces de la guía cada mes y abre un issue si hay rotos.
 - `revision-semestral`: en enero y julio abre un issue para revisar SIS, tope imponible y retención.
+
+## Protección de la rama main
+
+`.github/ruleset-main.json` define una regla que exige que el check `test` esté en verde antes de integrar cambios en `main`, y permite saltarla a los administradores y a GitHub Actions (para que los workflows que actualizan `index.html` y `params.json` sigan funcionando). Para activarla: Settings → Rules → Rulesets → New ruleset → Import a ruleset.
