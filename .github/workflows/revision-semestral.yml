@@ -1,0 +1,28 @@
+name: revision-semestral
+# Enero y julio: el SIS y el tope imponible suelen cambiar por semestre.
+on:
+  schedule:
+    - cron: "0 12 2 1,7 *"
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  recordatorio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Abrir issue de revisión
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Revisión semestral de tasas ($(date -u +%Y-%m))" \
+            --label mantenimiento \
+            --body "Revisar y, si cambiaron, actualizar con el workflow **update-tasas**:
+
+          - [ ] SIS (Superintendencia de Pensiones / indicadores previsionales)
+          - [ ] Tope imponible mensual en UF (AFP y salud, cesantía)
+          - [ ] Retención de boletas del año siguiente (SII)
+          - [ ] UTA y tabla del IGC cuando el SII publique el nuevo año tributario
+          - [ ] Filas abiertas de la tabla \"Pendientes por verificar\"
+
+          Guía: CONTRIBUTING.md"

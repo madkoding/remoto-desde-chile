@@ -163,7 +163,7 @@ def main():
 
     body = body.replace("- [ ] ", "- ")
     body = re.sub(r"(?m)^  - ", "    - ", body)  # listas anidadas: python-markdown pide 4 espacios
-    body = body.replace("(CONTRIBUTING.md)", f"({UPSTREAM}/blob/master/CONTRIBUTING.md)")
+    body = body.replace("(CONTRIBUTING.md)", f"({REPO}/blob/main/CONTRIBUTING.md)")
 
     md = markdown.Markdown(extensions=["tables", "fenced_code", "toc", "sane_lists"],
                            extension_configs={"toc": {"permalink": False}})
