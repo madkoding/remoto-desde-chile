@@ -65,6 +65,7 @@ TEMPLATE = """<!doctype html>
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/michroma-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script src="assets/theme.js"></script>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -74,6 +75,11 @@ TEMPLATE = """<!doctype html>
     <nav aria-label="Secciones">
 __NAV__
     </nav>
+    <button class="theme" type="button" id="theme" aria-label="Cambiar entre tema claro y oscuro">
+      <svg class="ico sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="ico moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <span>Tema</span>
+    </button>
     <p class="meta">Actualizada en octubre 2026.<br><a href="__REPO__">Código y contribuciones</a></p>
   </aside>
   <main id="top">
@@ -154,6 +160,9 @@ def main():
     md = markdown.Markdown(extensions=["tables", "fenced_code", "toc", "sane_lists"],
                            extension_configs={"toc": {"permalink": False}})
     out = add_icons(md.convert(body))
+    out = re.sub(r"<strong>Sin verificar:</strong>", '<span class="unv">Sin verificar</span>', out)
+    out = re.sub(r"<td>(Verificado|Parcial|Pendiente)</td>",
+                 lambda m: f'<td><span class="st st-{m.group(1).lower()}">{m.group(1)}</span></td>', out)
 
     # Tablas con scroll horizontal; enlaces externos en pestaña nueva.
     out = re.sub(r"<table>", '<div class="scroll"><table>', out)

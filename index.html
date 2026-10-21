@@ -20,6 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/michroma-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script src="assets/theme.js"></script>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -37,6 +38,11 @@
       <a href="#pendientes-por-verificar">Pendientes por verificar</a>
       <a href="#fuentes">Fuentes</a>
     </nav>
+    <button class="theme" type="button" id="theme" aria-label="Cambiar entre tema claro y oscuro">
+      <svg class="ico sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg>
+      <svg class="ico moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <span>Tema</span>
+    </button>
     <p class="meta">Actualizada en octubre 2026.<br><a href="https://github.com/madkoding/remoto-desde-chile">Código y contribuciones</a></p>
   </aside>
   <main id="top">
@@ -107,7 +113,7 @@
 <p><strong>Ojo con la geografía:</strong> un aviso que dice "remote" muchas veces está limitado a EE.UU., Europa o un país específico. Revisa siempre desde qué países contrata la empresa (en RemoteOK, por ejemplo, aparece como "Hires Remotely From") y si ofrece contrato de empleo, de contractor o freelance.</p>
 <ul>
 <li><a href="https://devschile.cl/" target="_blank" rel="noopener">devschile</a> tiene un canal #trabajos con bastante énfasis en lo remoto.</li>
-<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a> publica mensualmente un hilo de "Who's hiring". <strong>Sin verificar:</strong> Los links a herramientas para navegarlo que tenía la versión anterior estaban obsoletos; búscalas con "hn who is hiring search".</li>
+<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a> publica mensualmente un hilo de "Who's hiring". Para navegarlo con filtros (palabra clave, tecnología y "Remote"), usa <a href="https://hnhiring.com" target="_blank" rel="noopener">HNHiring</a>, un índice activo con los hilos desde 2018.</li>
 <li><a href="https://weworkremotely.com" target="_blank" rel="noopener">We Work Remotely</a> es, en sus palabras, la comunidad de trabajo remoto más grande del mundo; muy fuerte en tecnología.</li>
 <li><a href="https://remoteok.com" target="_blank" rel="noopener">RemoteOK</a> fue creada por <a href="https://x.com/levelsio" target="_blank" rel="noopener">Pieter Levels</a>, quien también creó <a href="https://nomadlist.com" target="_blank" rel="noopener">NomadList</a>.</li>
 <li><a href="https://remote.co" target="_blank" rel="noopener">Remote.co</a> concentra empleadores remote-first. (No confundir con <a href="https://remote.com" target="_blank" rel="noopener">Remote.com</a>, que es una plataforma de contratación y pagos para empleadores.)</li>
@@ -119,17 +125,18 @@
 </ul>
 <h2 id="cuanto-cobro"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5v11M15 9.5c0-1.2-1.3-2-3-2s-3 .8-3 2 1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2-3-.8-3-2"/></svg><span>¿Cuánto cobro?</span></h2>
 <p>Harto. Por favor, aprovecha que hay demanda de desarrolladores y cobra caro, nos beneficia a todes que "desarrollador/a en Chile" no sea sinónimo de bajo presupuesto.</p>
-<p>Si no tienes idea cuánto es "harto", estas son nuestras sugerencias (USD brutos anuales) <strong>Sin verificar:</strong> <em>rangos de la versión original, no re-validados con datos de mercado 2026</em>:</p>
+<p>Si no tienes idea cuánto es "harto", estas son nuestras sugerencias (USD brutos anuales) <em>(rangos de la versión original de la comunidad; úsalos como ancla de negociación, no como promedio de mercado)</em>:</p>
 <ul>
 <li>Junior, literalmente recién formado: 70.000 dólares al año</li>
 <li>Senior, capaz de trabajar independiente y consistentemente entregar buenos resultados: 90.000 dólares al año</li>
 <li>Staff o Team Lead, además de los aspectos técnicos de un senior, con habilidades de liderazgo: 110.000 dólares al año</li>
 <li>Senior Staff+... espero que a estas alturas ya tengas una idea</li>
 </ul>
+<p>Para contrastar con datos de mercado: Deel estima un promedio de más de US$64.000 anuales para programadores en Chile que trabajan para mercados extranjeros (<a href="https://www.bloomberglinea.com/tecnologia/demanda-de-ingenieros-de-software-se-mantiene-en-latam-salarios-inician-en-los-us48000-al-ano/" target="_blank" rel="noopener">Bloomberg Línea, sep. 2024</a>), y una guía salarial para LATAM publicada en 2026 sitúa los rangos mensuales en US$800-2.000 (junior), US$2.000-3.800 (semi senior) y US$3.800-6.500+ (senior) (<a href="https://talently.tech/blog/salarios-programadores-por-rol-seniority-latam/" target="_blank" rel="noopener">Talently</a>). Las cifras de arriba están en la parte alta de ese rango: apuntan a empresas de EE.UU. y a perfiles destacados.</p>
 <p>Para contrastar: los sueldos publicados para roles <strong>locales</strong> en Chile están bastante por debajo (por ejemplo, avisos de Full Stack Senior en torno a CLP 2,4 millones mensuales en adelante, según guías salariales 2026). Esa diferencia es justamente el punto de trabajar para el extranjero.</p>
 <p>Parte negociando con un 20-30% más de lo que quieres.</p>
 <p>Si trabajas como freelancer por hora o día, cobra el doble, tienes que pagar las horas que pasarás buscando proyectos y el tiempo que te dejarán esperando.</p>
-<p>Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección <a href="#paga-impuestos-salud-y-cotizaciones">"Paga impuestos, salud y cotizaciones"</a>. Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar <a href="https://impuestos.netlify.app/" target="_blank" rel="noopener">esta calculadora</a> (<a href="https://github.com/muzk/impuestos" target="_blank" rel="noopener">Repo</a>) <strong>Sin verificar:</strong> <em>verifica que use las cifras 2026 de esta guía</em>, o el <a href="https://previsionsocial.gob.cl/simulador/" target="_blank" rel="noopener">simulador oficial de cotización</a>.</p>
+<p>Recuerda que los montos que negocias son BRUTOS. Por recibir ese dinero, tendrás que pagar cotizaciones (para salud y jubilación) y además impuestos. Puedes ver más detalles en la sección <a href="#paga-impuestos-salud-y-cotizaciones">"Paga impuestos, salud y cotizaciones"</a>. Si quieres una aproximación rápida de lo que tendrás que pagar, puedes revisar <a href="https://impuestos.netlify.app/" target="_blank" rel="noopener">esta calculadora</a> (<a href="https://github.com/muzk/impuestos" target="_blank" rel="noopener">Repo</a>) (es una herramienta de terceros; su página no declara el año tributario que usa, así que contrasta el resultado con el simulador de esta guía), o el <a href="https://previsionsocial.gob.cl/simulador/" target="_blank" rel="noopener">simulador oficial de cotización</a>.</p>
 <h2 id="recibe-tu-sueldo"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></svg><span>Recibe tu sueldo</span></h2>
 <h3 id="wise"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h15l-4-4M20 16H5l4 4"/></svg><span>Wise</span></h3>
 <p><a href="https://wise.com/cl" target="_blank" rel="noopener">Wise</a> (antes Transferwise) te da una cuenta con datos bancarios locales en varias monedas (USD, EUR, GBP, etc.) donde tu empleador puede depositar como si tuvieras una cuenta en EE.UU. Luego tú puedes transferir a tu cuenta en Chile.</p>
@@ -142,14 +149,15 @@
 </ul>
 <p>Limitaciones:</p>
 <ul>
-<li><strong>Sin verificar:</strong> no entrega tarjeta física para residentes en Chile (según una comparativa de Global66; verifica si cambió con el lanzamiento local)</li>
+<li><span class="unv">Sin verificar</span> el comunicado de lanzamiento en Chile (21 de julio de 2026) no menciona tarjeta física ni límites de transferencia; revisa las condiciones en <a href="https://wise.com/cl/" target="_blank" rel="noopener">wise.com/cl</a> antes de depender de ello</li>
+<li>según ese comunicado, la cuenta global entrega datos bancarios locales en 9 monedas (entre ellas USD, EUR y GBP) y permite enviar desde CLP a más de 40 monedas (<a href="https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/" target="_blank" rel="noopener">Wise</a>)</li>
 <li>tu empleador debe poder pagar a una cuenta local de EE.UU./Eurozona (casi siempre puede)</li>
 </ul>
 <h3 id="otras-alternativas-fintech"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg><span>Otras alternativas (fintech)</span></h3>
 <ul>
 <li><strong><a href="https://www.payoneer.com" target="_blank" rel="noopener">Payoneer</a></strong>: pensada para cobrar desde marketplaces (Upwork, Fiverr, etc.). Una estrategia común es recibir en Payoneer y traspasar a Wise para convertir.</li>
 <li><strong><a href="https://www.deel.com" target="_blank" rel="noopener">Deel</a></strong>: es una plataforma de contratos y pagos para empresas; tu empleador también tiene que estar en Deel. Útil si ya te contratan por ahí.</li>
-<li><strong><a href="https://global66.com/cl/freelancers/" target="_blank" rel="noopener">Global66 – Cuenta Global</a></strong>: ofrece números de cuenta en EE.UU. y Europa a tu nombre, retiro por ACH desde plataformas como Deel. <strong>Sin verificar:</strong> Ojo: los servicios de divisas se centralizan en Global 81 SpA, que <strong>no está fiscalizada por la CMF</strong> según su propio sitio. Evalúa el riesgo antes de mover montos grandes.</li>
+<li><strong><a href="https://global66.com/cl/freelancers/" target="_blank" rel="noopener">Global66 – Cuenta Global</a></strong>: ofrece números de cuenta en EE.UU. y Europa a tu nombre, retiro por ACH desde plataformas como Deel. Ojo: los servicios de divisas se centralizan en Global 81 SpA, que <strong>no está fiscalizada por la CMF</strong>, según el <a href="https://global66.com/cl/centro-ayuda/" target="_blank" rel="noopener">centro de ayuda de la propia empresa</a>. Evalúa el riesgo antes de mover montos grandes.</li>
 <li><strong>PayPal</strong>: suele ser caro (margen cambiario de varios puntos porcentuales sobre el tipo de cambio medio). Úsalo solo si el cliente no te deja otra opción.</li>
 </ul>
 <h3 id="cuenta-en-el-extranjero"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/></svg><span>Cuenta en el extranjero</span></h3>
@@ -185,7 +193,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 </li>
 <li>La comisión que te cobra el banco chileno por recibir el dinero: depende del Banco. En algunos casos, esta comisión es negociable si recibes periódicamente dinero.</li>
 </ol>
-<p><strong>Sin verificar: las tablas de comisiones por banco de la versión anterior eran imágenes de 2020-2024 y no pudimos re-verificarlas.</strong> Datos puntuales recientes:</p>
+<p><span class="unv">Sin verificar</span> Las tablas de comisiones por banco de la versión anterior eran imágenes de 2020-2024. Los datos de abajo son los más recientes que encontramos, con su fecha; confirma el tarifario vigente con tu banco:</p>
 <div class="scroll"><table>
 <thead>
 <tr>
@@ -197,8 +205,18 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <tbody>
 <tr>
 <td>Santander</td>
-<td>Desde 10 USD + IVA por recibir, más 15 USD + IVA por abono automático (varía según monto)</td>
-<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise Chile</a></td>
+<td>Desde 10 USD + IVA por recibir, más 15 USD + IVA por abono automático (varía según monto). Mantención de la cuenta en USD: gratis con planes Limited o Latam Pass; si no, UF 0,08 (ene. 2025)</td>
+<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise Chile, ago. 2024</a>; <a href="https://www.rankia.cl/blog/mejores-cuentas-bancarias/4968740-mejores-cuentas-corrientes-dolares" target="_blank" rel="noopener">Rankia, ene. 2025</a></td>
+</tr>
+<tr>
+<td>BancoEstado</td>
+<td>Recibir en cuenta en CLP: 15 USD + IVA; en cuenta en USD: 21 USD + IVA (aprox., varía con el monto)</td>
+<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise Chile, ago. 2024</a></td>
+</tr>
+<tr>
+<td>Banco de Chile</td>
+<td>1% si recibes menos de US$2.500 y 0,6% si recibes más. Mantención por plan: UF 0,23 (Valle), 0,39 (Cordillera), 0,55 (Océano)</td>
+<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise Chile, ago. 2024</a>; <a href="https://www.rankia.cl/blog/mejores-cuentas-bancarias/4968740-mejores-cuentas-corrientes-dolares" target="_blank" rel="noopener">Rankia, ene. 2025</a></td>
 </tr>
 <tr>
 <td>Scotiabank</td>
@@ -231,7 +249,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <li>Un buen banco con tecnología de punta te enviará un correo notificándote del pago. En otros casos, tienes que usar <em>polling</em> y llamar hasta que te digan que llegó</li>
 <li>Ahora que ya sabes que están los dólares, debes ir a una sucursal.<ul>
 <li>OJO: pregunta en qué sucursal te pueden atender. BancoEstado tiene <a href="https://www.bancoestado.cl/imagenes/_personas/noticias/detalle/sucursales-chilenos-exterior.asp" target="_blank" rel="noopener">sucursales especiales</a> para esto.</li>
-<li>En el caso del <strong>Bci</strong>: Si bien el proceso es igual de manual que en los otros bancos, Bci permite hacerlo de manera remota, poniéndote en contacto con la ejecutiva que está a cargo de las operaciones en moneda extranjera, quien te enviará una carta para completar donde se define el tipo de cambio y las cuentas en las que se abonará el monto y de donde se descontará la comisión. <strong>Sin verificar:</strong> <em>Basado en experiencias personales anteriores; confirma que siga vigente.</em></li>
+<li>En el caso del <strong>Bci</strong>: Si bien el proceso es igual de manual que en los otros bancos, Bci permite hacerlo de manera remota, poniéndote en contacto con la ejecutiva que está a cargo de las operaciones en moneda extranjera, quien te enviará una carta para completar donde se define el tipo de cambio y las cuentas en las que se abonará el monto y de donde se descontará la comisión. <span class="unv">Sin verificar</span> <em>basado en experiencias personales anteriores; confirma que siga vigente.</em></li>
 </ul>
 </li>
 <li>En el mesón de atención de cliente, solicita tus dólares.<ul>
@@ -270,7 +288,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <li>es normal que te pidan recibos de pagos anteriores si ya has recibido pagos anteriormente.</li>
 <li>si te pagan mensualmente, díselo a tu ejecutivo. Darle el contexto completo siempre ayuda.</li>
 </ul>
-<p>Bancos que ofrecen cuenta corriente en dólares: Santander, Banco de Chile, BICE, Scotiabank, Itaú, Bci y BancoEstado. <strong>Sin verificar:</strong> Los costos de mantención de la tabla anterior eran de enero 2020; consulta el tarifario vigente.</p>
+<p>Bancos que ofrecen cuenta corriente en dólares: Santander, Banco de Chile, BICE, Scotiabank, Itaú, Bci y BancoEstado. Los costos de mantención varían por plan y cambian con frecuencia; en la tabla anterior están los datos más recientes que encontramos (Itaú cobra una comisión mensual cuyo monto no está publicado en las fuentes consultadas).</p>
 <h4 id="tipo-de-cambio">Tipo de Cambio</h4>
 <p>El tipo de cambio depende de cómo vendas tus dólares:</p>
 <ol>
@@ -294,9 +312,9 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <h3 id="emision-de-boletas"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Emisión de boletas</span></h3>
 <p>Suponiendo que la empresa para la que trabajas no tiene presencia legal en Chile, debes emitir boleta de honorarios via <a href="https://www.sii.cl" target="_blank" rel="noopener">la página web del SII</a>. Elige la opción que el contribuyente emisor (tú) retiene el Pago Provisional Mensual (PPM).</p>
 <p>El SII tiene un RUT especial para empresas extranjeras: <strong>44.444.446-0</strong>. En el campo de región puedes poner cualquier cosa, pero la dirección debería ser la real de la empresa.</p>
-<p>Si te pagan en dólares, usa la <a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm" target="_blank" rel="noopener">tabla dólar-peso del SII</a> para convertir el total. <strong>Sin verificar:</strong> <em>El link sigue el patrón de años anteriores; confirma que abra.</em></p>
+<p>Si te pagan en dólares, usa la <a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm" target="_blank" rel="noopener">tabla dólar-peso del SII</a> para convertir el total. </p>
 <h3 id="impuestos-mensuales"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg><span>Impuestos mensuales</span></h3>
-<p>Si tú retuviste el Pago Provisional Mensual al emitir la boleta, debes declarar (<strong>y, muy importante, pagar!</strong>) impuestos mensuales usando el formulario F29 en <a href="https://www.sii.cl" target="_blank" rel="noopener">la web del SII</a>. La página calcula el monto por ti a partir de las boletas electrónicas del mes anterior, y luego puedes pagar en línea con tu banco. El plazo es el día 12 del mes siguiente (o el 20 si pagas en línea con el banco; confirma en SII). Cuando se habla de "devolución de impuestos" este es el dinero que se te devuelve, si sobra algo luego de tramitar tu declaración de impuestos anual.</p>
+<p>Si tú retuviste el Pago Provisional Mensual al emitir la boleta, debes declarar (<strong>y, muy importante, pagar!</strong>) impuestos mensuales usando el formulario F29 en <a href="https://www.sii.cl" target="_blank" rel="noopener">la web del SII</a>. La página calcula el monto por ti a partir de las boletas electrónicas del mes anterior, y luego puedes pagar en línea con tu banco. El plazo es el día 20 del mes siguiente si declaras por internet en sii.cl (el día 12 aplica solo a formulario en papel); si cae en fin de semana o festivo, se traslada al día hábil siguiente (<a href="https://www.oficinavirtual.cl/blog/2026/3/19/paso-a-paso-pago-iva" target="_blank" rel="noopener">Oficina Virtual</a>). Cuando se habla de "devolución de impuestos" este es el dinero que se te devuelve, si sobra algo luego de tramitar tu declaración de impuestos anual.</p>
 <p>La retención sobre cada boleta (por Ley 21.133) sube todos los años:</p>
 <div class="scroll"><table>
 <thead>
@@ -329,7 +347,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <li>quienes emitieron boletas por menos de 5 ingresos mínimos mensuales</li>
 </ul>
 <p><strong>¿Cómo se paga?</strong> Se calcula en la Operación Renta (abril) y el pago lo hace la Tesorería General de la República (TGR) a las instituciones previsionales, imputando tu retención. Te da cobertura anual <strong>desde el 1 de julio hasta el 30 de junio</strong> del año siguiente. Ya no es necesario pagar "AFP y salud a mano".</p>
-<p><strong>Base imponible:</strong> el <strong>80% del total de tus boletas del año anterior</strong>, con un tope anual equivalente a 12 veces el tope imponible mensual (≈90 UF mensuales en 2026 para AFP y salud; <strong>Sin verificar:</strong> la cifra exacta varía entre fuentes, 89,9-90 UF; confirma en la <a href="https://www.spensiones.cl" target="_blank" rel="noopener">Superintendencia de Pensiones</a>).</p>
+<p><strong>Base imponible:</strong> el <strong>80% del total de tus boletas del año anterior</strong>, con un tope anual equivalente a 12 veces el tope imponible mensual (90 UF mensuales en 2026 para AFP y salud, 135,2 UF para el seguro de cesantía, según la <a href="https://spensiones.cl/portal/institucional/594/w3-article-16921.html" target="_blank" rel="noopener">Superintendencia de Pensiones</a>; en 12 meses son 1.080 UF).</p>
 <p><strong>¿Qué se paga?</strong></p>
 <div class="scroll"><table>
 <thead>
@@ -376,7 +394,7 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <tr>
 <td>% de la renta imponible en cobertura parcial</td>
 <td>80%</td>
-<td>90% (sin verificar)</td>
+<td>90%</td>
 <td>desaparece (100%)</td>
 </tr>
 </tbody>
@@ -511,21 +529,23 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <p>Para ejercer tus stock options eventualmente tendrás que tener dólares (o la moneda en la que se vendan las acciones), para poder pagarle a tu empresa. Si quieres poder hacerlo, probablemente te conviene ir ahorrando dólares desde un comienzo y encontrar una manera de transferir que no sea excesivamente cara, usando uno de los métodos descritos en "Recibe tu sueldo" pero a la inversa.</p>
 <p>Las RSUs en general son entregadas por empresas que ya son públicas o más establecidas. Es parecido a tener un stock option con strike price de $0, esto es, no tienes que ejercerlas, te dan las acciones directamente.</p>
 <h2 id="creditos-con-bancos-hipotecario-de-consumo-etc"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span>Créditos con Bancos (hipotecario, de consumo, etc).</span></h2>
-<p><strong>Sin verificar:</strong> <em>Esta sección no pudo re-verificarse con fuentes oficiales; son criterios de bancos que cambian con frecuencia.</em></p>
+<p>Los criterios de los bancos cambian con frecuencia y cada institución tiene los suyos. Lo que sigue combina la guía original con una guía publicada en 2026 (<a href="https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775" target="_blank" rel="noopener">El Desconcierto, mayo 2026</a>).</p>
 <p>Como trabajador remoto para una empresa de USA (sin contrato con una empresa chilena) eres considerado como <strong>TRABAJADOR INDEPENDIENTE</strong>, aunque seas en la práctica dependiente.</p>
 <p>Para los bancos, es muy probable que te consideren "más riesgoso" solo por el hecho de ser trabajador independiente. Lo cual hace sentido si pensamos que ellos, en general, tienen ingresos variables e históricamente no se han pagado sus cotizaciones previsionales (por eso ahora lo hicieron obligatorio).</p>
 <p>En consecuencia, los bancos te exigirán harta información de respaldo para cosas como <strong>CRÉDITOS HIPOTECARIOS</strong>.</p>
 <h3 id="como-calculan-tu-sueldo-liquido-para-prestarte-plata-creditos-hipotecarios"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h3.5"/></svg><span>Cómo calculan tu sueldo líquido para prestarte plata (Créditos hipotecarios)</span></h3>
 <p>¿Recuerdas que el SII calcula los impuestos que tienes que pagar considerando solo el 70% de tu ingreso bruto (porque descuenta 30% de gastos presuntos)?</p>
-<p>Bueno, dice la leyenda que los bancos hacen algo parecido para calcular tu líquido para cosas como créditos hipotecarios. Así que si ganas $2.000.000, el banco considerará que tu sueldo líquido es $1.400.000.</p>
-<p>Considera que tu dividendo (lo que pagas mensualmente como cuota de tu crédito hipotecario) no puede superar el 25% de tu líquido. Es decir, si ganas $2.000.000, tu líquido es $1.400.000 y por ende tu dividendo máximo es $350.000.</p>
+<p>Bueno, se comenta que los bancos hacen algo parecido para calcular tu líquido para cosas como créditos hipotecarios. Así que si ganas $2.000.000, el banco considerará que tu sueldo líquido es $1.400.000. <span class="unv">Sin verificar</span> no encontramos una fuente que lo confirme.</p>
+<p>Considera que tu dividendo (lo que pagas mensualmente como cuota de tu crédito hipotecario) no debería superar entre el 25% y el 30% de tu líquido (usamos 25% en el ejemplo, el criterio más conservador). Es decir, si ganas $2.000.000, tu líquido es $1.400.000 y por ende tu dividendo máximo es $350.000.</p>
 <p>De todas formas, esta restricción te la pueden subir gracias al "comité evaluador" del banco. El comité evaluador tomará cualquier evidencia que diga "sí, esta persona tiene pinta de ser buen/mal cliente" para tomar su decisión.</p>
 <h3 id="que-cosas-te-piden-para-un-credito"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></svg><span>Qué cosas te piden para un crédito</span></h3>
 <p>¿Recuerdas que eres independiente y por ende más riesgoso?</p>
 <p>Bueno, el banco te podría pedir cosas como:</p>
 <ul>
 <li>Últimas 2 declaraciones de renta (es decir, 2 años de trabajo como independiente).</li>
-<li>Últimas 6 boletas de honorario (o mejor dicho, los últimos 6 meses de boletas).</li>
+<li>Boletas de honorarios de los últimos 12 meses (la guía original mencionaba 6; pregunta cuántas exige tu banco).</li>
+<li>Demostrar ingresos continuos durante 12 a 24 meses.</li>
+<li>Pie habitual de entre 10% y 20% (los bancos suelen financiar hasta el 80% del valor de la propiedad).</li>
 </ul>
 <p>Lo cual puede parecer mucho, sobre todo cuando estás partiendo.</p>
 <h3 id="que-cosas-puedes-usar-a-tu-favor-para-verte-menos-riesgoso-para-un-credito-hipotecario"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.3l1.1-6.2L3 9.7l6.2-.9z"/></svg><span>Qué cosas puedes usar a tu favor (para verte menos riesgoso para un crédito hipotecario)</span></h3>
@@ -541,17 +561,79 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <h2 id="tengo-mas-preguntas"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.2a2.6 2.6 0 1 1 3.6 2.4c-.7.4-1.1 1-1.1 1.8M12 17h.01"/></svg><span>Tengo más preguntas</span></h2>
 <p>Pásate por el canal #remoto de <a href="https://devschile.cl/" target="_blank" rel="noopener">el slack de devschile</a>.</p>
 <h2 id="pendientes-por-verificar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 11 3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg><span>Pendientes por verificar</span></h2>
-<ul>
-<li>Rangos de sueldo en USD (sección "¿Cuánto cobro?"): sin fuente 2026 de mercado remoto.</li>
-<li>Tarifas de recepción de remesas por banco (BICE, Bci, Banco de Chile, BancoEstado, Itaú, Scotiabank, Santander) con fecha de vigencia.</li>
-<li>Costos de mantención de cuenta corriente en USD por banco.</li>
-<li>Tope imponible anual exacto en UF para independientes 2026 (89,9 vs 90 UF).</li>
-<li>Porcentaje de cobertura parcial para la Operación Renta 2027 (90% según el calendario original).</li>
-<li>Plazos F29 (día 12 vs 20) y link a tabla de dólar SII 2026.</li>
-<li>Condiciones de Wise en Chile (tarjeta física, límites) tras su lanzamiento local de julio 2026.</li>
-<li>Sección de créditos hipotecarios.</li>
-<li>Herramientas para navegar "Who's hiring" de Hacker News y calculadora <code>impuestos.netlify.app</code>.</li>
-</ul>
+<p>Revisión de octubre 2026. "Verificado" = confirmado con fuente oficial o directa; "Parcial" = hay datos con fecha pero no vigentes de forma oficial; "Pendiente" = no se pudo confirmar.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Estado</th>
+<th>Fuente consultada</th>
+<th>Qué falta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tope imponible 2026</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://spensiones.cl/portal/institucional/594/w3-article-16921.html" target="_blank" rel="noopener">Superintendencia de Pensiones</a>: 90 UF (AFP y salud), 135,2 UF (cesantía)</td>
+<td>Nada</td>
+</tr>
+<tr>
+<td>Cobertura parcial OR2027 (90%)</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://www.afphabitat.cl/wp-content/uploads/2026/08/Folleto_N29_AfiliadoIndependiente_Agosto2026.pdf" target="_blank" rel="noopener">AFP Habitat, folleto ago. 2026</a> y <a href="https://previsionsocial.gob.cl/wp-content/uploads/2026/05/05-FICHA-QUE-DICE-LA-LEY.pdf" target="_blank" rel="noopener">Previsión Social</a></td>
+<td>Nada</td>
+</tr>
+<tr>
+<td>Plazos del F29 y tabla del dólar SII 2026</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://www.oficinavirtual.cl/blog/2026/3/19/paso-a-paso-pago-iva" target="_blank" rel="noopener">Oficina Virtual</a> (día 20 por internet, día 12 en papel) y <a href="https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm" target="_blank" rel="noopener">SII</a></td>
+<td>Nada</td>
+</tr>
+<tr>
+<td>Global66 y la CMF</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://global66.com/cl/centro-ayuda/" target="_blank" rel="noopener">Centro de ayuda de Global66</a></td>
+<td>Nada</td>
+</tr>
+<tr>
+<td>Herramientas para "Who's hiring"</td>
+<td><span class="st st-verificado">Verificado</span></td>
+<td><a href="https://hnhiring.com" target="_blank" rel="noopener">HNHiring</a></td>
+<td>Nada</td>
+</tr>
+<tr>
+<td>Rangos de sueldo en USD</td>
+<td><span class="st st-parcial">Parcial</span></td>
+<td><a href="https://www.bloomberglinea.com/tecnologia/demanda-de-ingenieros-de-software-se-mantiene-en-latam-salarios-inician-en-los-us48000-al-ano/" target="_blank" rel="noopener">Bloomberg Línea (Deel), 2024</a> y <a href="https://talently.tech/blog/salarios-programadores-por-rol-seniority-latam/" target="_blank" rel="noopener">Talently, 2026</a></td>
+<td>Un estudio 2026 específico de contratación remota desde Chile</td>
+</tr>
+<tr>
+<td>Requisitos de crédito hipotecario</td>
+<td><span class="st st-parcial">Parcial</span></td>
+<td><a href="https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775" target="_blank" rel="noopener">El Desconcierto, mayo 2026</a></td>
+<td>Criterios publicados por cada banco; la regla del 70% sigue sin fuente</td>
+</tr>
+<tr>
+<td>Comisiones de recepción y mantención por banco</td>
+<td><span class="st st-parcial">Parcial</span></td>
+<td><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise, ago. 2024</a> y <a href="https://www.rankia.cl/blog/mejores-cuentas-bancarias/4968740-mejores-cuentas-corrientes-dolares" target="_blank" rel="noopener">Rankia, ene. 2025</a></td>
+<td>Tarifarios vigentes de BICE, Bci, Itaú y Scotiabank</td>
+</tr>
+<tr>
+<td>Wise en Chile: tarjeta y límites</td>
+<td><span class="st st-pendiente">Pendiente</span></td>
+<td><a href="https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/" target="_blank" rel="noopener">Wise, comunicado del 21 jul. 2026</a></td>
+<td>El comunicado no los menciona</td>
+</tr>
+<tr>
+<td>Calculadora <code>impuestos.netlify.app</code></td>
+<td><span class="st st-pendiente">Pendiente</span></td>
+<td><a href="https://impuestos.netlify.app/" target="_blank" rel="noopener">Sitio</a></td>
+<td>Carga solo con JavaScript y no declara el año tributario</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="fuentes"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Fuentes</span></h2>
 <ul>
 <li><a href="https://www.sii.cl/noticias/2025/261225noti01smn.htm" target="_blank" rel="noopener">SII: retención boletas de honorarios 2026</a></li>
@@ -564,6 +646,12 @@ Swift Code: Swift code de tu banco (consultar con ejecutivo de cuentas)
 <li><a href="https://www.global66.com/blog/?p=23563" target="_blank" rel="noopener">Global66: cuenta multimoneda para freelancers</a></li>
 <li><a href="https://wise.com/cl/blog/que-bancos-reciben-transferencias-internacionales-chile" target="_blank" rel="noopener">Wise: bancos que reciben transferencias internacionales en Chile</a></li>
 <li><a href="https://www.weremoto.com/blog/las-mejores-plataformas-para-encontrar-trabajo-remoto-en-2026-como-elegir-desde-latam" target="_blank" rel="noopener">WeRemoto: plataformas de trabajo remoto 2026 desde LATAM</a></li>
+<li><a href="https://spensiones.cl/portal/institucional/594/w3-article-16921.html" target="_blank" rel="noopener">Superintendencia de Pensiones: topes imponibles 2026</a></li>
+<li><a href="https://www.afphabitat.cl/wp-content/uploads/2026/08/Folleto_N29_AfiliadoIndependiente_Agosto2026.pdf" target="_blank" rel="noopener">AFP Habitat: folleto de afiliado independiente (ago. 2026)</a></li>
+<li><a href="https://www.oficinavirtual.cl/blog/2026/3/19/paso-a-paso-pago-iva" target="_blank" rel="noopener">Oficina Virtual: F29 y plazos</a></li>
+<li><a href="https://newsroom.wise.com/en-NAM/268425-wise-launches-international-money-transfer-service-in-chile/" target="_blank" rel="noopener">Wise: lanzamiento en Chile (jul. 2026)</a></li>
+<li><a href="https://hnhiring.com" target="_blank" rel="noopener">HNHiring</a></li>
+<li><a href="https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775" target="_blank" rel="noopener">El Desconcierto: requisitos de crédito hipotecario (may. 2026)</a></li>
 <li>Guía original: <a href="https://github.com/devschile/remoto-desde-chile" target="_blank" rel="noopener">devschile/remoto-desde-chile</a></li>
 </ul>
     </article>

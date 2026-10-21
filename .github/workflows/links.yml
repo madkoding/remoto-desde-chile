@@ -1,0 +1,26 @@
+name: links
+on:
+  schedule:
+    - cron: "0 12 1 * *"   # el día 1 de cada mes
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Revisar enlaces del README
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --max-retries 2 --accept 200,206,403,429 README.md
+          fail: false
+      - name: Abrir issue si hay enlaces rotos
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Enlaces rotos en la guía"
+          content-filepath: ./lychee/out.md
+          labels: mantenimiento
