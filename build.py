@@ -23,7 +23,7 @@ TEMPLATE = """<!doctype html>
 <title>Remoto desde Chile</title>
 <meta name="description" content="Guía práctica para desarrolladores que trabajan remoto desde Chile: cómo cobrar, emitir boletas, cotizar y declarar impuestos en 2026.">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#f5f5f6">
+<meta name="theme-color" content="#f2f7fb">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Michroma&display=swap" rel="stylesheet">
@@ -40,7 +40,6 @@ __NAV__
   </aside>
   <main id="top">
     <header class="hero">
-      <span class="kana" aria-hidden="true">リモート<br>チリ</span>
       <h1>Cobra en dólares, cotiza y declara en Chile.</h1>
       <p class="lead">Guía para desarrolladores que trabajan para el extranjero desde Chile. Las cifras de 2026 vienen del SII y de Previsión Social; lo que no pudimos verificar está marcado.</p>
       <section class="calc" aria-labelledby="calc-title">
