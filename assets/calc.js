@@ -50,11 +50,30 @@ function render() {
   $("o-tasa").textContent = "Impuesto efectivo " + pct(r.anual ? r.impuesto / r.anual : 0);
 }
 
+// Estado de verificación de cada parámetro (fecha y fuente), tomado de params.json.
+function renderVerif(t) {
+  const el = $("o-verif");
+  if (!el) return;
+  const fmt = (d) => d.split("-").reverse().join("-");
+  const fila = (k, v) => {
+    const t_ = t[k];
+    if (!t_) return "";
+    const base = k === "sis" || k === "atep_sanna" ? pct(t_.valor) : k === "uta" ? clp.format(t_.valor) : String(t_.valor);
+    return `${t_.nombre} ${base}: ${t_.verificado ? "verificado el " + fmt(t_.verificado) : '<span class="unv">Sin verificar</span>'}`;
+  };
+  el.innerHTML = ["sis", "tope_uf_mensual", "uta", "atep_sanna"].map((k) => fila(k)).filter(Boolean).join(" · ");
+}
+
 // UF de referencia: la actualiza un workflow en assets/params.json; si falla, se usa el valor por defecto.
 fetch("assets/params.json", { cache: "no-cache" })
   .then((r) => (r.ok ? r.json() : null))
   .then((p) => {
     if (p && p.uf > 0) { params = { ...params, uf: p.uf }; }
+    const t = (p && p.tasas) || {};
+    const val = (k) => (t[k] && t[k].valor > 0 ? t[k].valor : undefined);
+    params = { ...params, ...(val("sis") && { sis: val("sis") }), ...(val("atep_sanna") && { atepSanna: val("atep_sanna") }),
+      ...(val("tope_uf_mensual") && { topeUf: val("tope_uf_mensual") }), ...(val("uta") && { uta: val("uta") }) };
+    renderVerif(t);
     const el = $("o-uf");
     if (el) el.textContent = clp.format(params.uf) + (p && p.fecha ? " al " + p.fecha.split("-").reverse().join("-") : "");
     render();

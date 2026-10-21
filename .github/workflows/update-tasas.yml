@@ -1,0 +1,45 @@
+name: update-tasas
+# Ajusta una tasa de assets/params.json (por ejemplo, cuando el SIS cambia cada semestre).
+on:
+  workflow_dispatch:
+    inputs:
+      tasa:
+        description: "Clave de la tasa"
+        type: choice
+        options: [sis, atep_sanna, tope_uf_mensual, uta]
+      valor:
+        description: "Nuevo valor (decimal: 0.02 = 2%)"
+        required: true
+      desde:
+        description: "Vigente desde (AAAA-MM), opcional"
+        required: false
+      fuente:
+        description: "Fuente consultada"
+        required: true
+permissions:
+  contents: write
+jobs:
+  tasa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Actualizar params.json
+        env:
+          TASA: ${{ inputs.tasa }}
+          VALOR: ${{ inputs.valor }}
+          DESDE: ${{ inputs.desde }}
+          FUENTE: ${{ inputs.fuente }}
+        run: |
+          hoy=$(date -u +%F)
+          jq --arg k "$TASA" --argjson v "$VALOR" --arg d "$DESDE" --arg f "$FUENTE" --arg h "$hoy" \
+            '.tasas[$k].valor = $v | .tasas[$k].verificado = $h | .tasas[$k].fuente = $f | (if $d != "" then .tasas[$k].desde = $d else . end)' \
+            assets/params.json > params.tmp
+          mv params.tmp assets/params.json
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/params.json
+          git commit -m "chore: actualizar tasa $TASA" && git push
+        env:
+          TASA: ${{ inputs.tasa }}

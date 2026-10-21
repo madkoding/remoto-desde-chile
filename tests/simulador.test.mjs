@@ -1,5 +1,6 @@
 import test from "node:test";
 import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import assert from "node:assert/strict";
 import { simular, igc, DEFAULTS, TRAMOS, SIS, ATEP_SANNA } from "../assets/simulador.js";
 
@@ -66,4 +67,26 @@ test("los tramos del README coinciden con TRAMOS", () => {
     assert.equal(f[4] === "exento" ? 0 : num(f[4]), factor);
     assert.ok(Math.abs(num(f[5]) - rebaja * UTA) < 1, `rebaja tramo ${i}: ${f[5]} vs ${rebaja * UTA}`);
   });
+});
+
+// Contraste con la librería tax-cl (la que usa impuestos.netlify.app) configurada para la Operación Renta 2026.
+// Solo se compara el impuesto global complementario: sus cotizaciones usan parámetros más antiguos.
+test("el IGC coincide con tax-cl en un rango de sueldos", (t) => {
+  let taxCl;
+  try { taxCl = createRequire(import.meta.url)("tax-cl"); } catch { return t.skip("tax-cl no está instalado (npm install)"); }
+  taxCl.configurarDeclaracion(2026);
+  for (let mensual = 500_000; mensual <= 20_000_000; mensual += 250_000) {
+    const anual = mensual * 12;
+    const esperado = taxCl.calcular(mensual).impuestos;
+    const mio = igc(anual - Math.min(anual * 0.3, 15 * UTA), UTA);
+    assert.ok(Math.abs(esperado - mio) < 1, `mensual ${mensual}: tax-cl ${esperado} vs ${mio}`);
+  }
+});
+
+test("params.json es consistente con los valores por defecto", () => {
+  const p = JSON.parse(readFileSync(new URL("../assets/params.json", import.meta.url), "utf8"));
+  assert.equal(p.tasas.sis.valor, SIS);
+  assert.equal(p.tasas.atep_sanna.valor, ATEP_SANNA);
+  assert.equal(p.tasas.uta.valor, UTA);
+  assert.ok(p.uf > 0 && /^\d{4}-\d{2}-\d{2}$/.test(p.fecha));
 });

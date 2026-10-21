@@ -1,0 +1,7 @@
+{
+  "name": "remoto-desde-chile",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test" },
+  "devDependencies": { "tax-cl": "1.4.2" }
+}

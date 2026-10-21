@@ -1,5 +1,32 @@
 {
   "uf": 41189.24,
   "fecha": "2026-10-20",
-  "fuente": "mindicador.cl"
+  "fuente": "mindicador.cl",
+  "tasas": {
+    "sis": {
+      "nombre": "SIS",
+      "valor": 0.02,
+      "desde": "2026-07",
+      "verificado": "2026-10-20",
+      "fuente": "AFP Habitat (folleto ago. 2026) y Teced"
+    },
+    "atep_sanna": {
+      "nombre": "ATEP y SANNA",
+      "valor": 0.0093,
+      "verificado": null,
+      "fuente": "referencial (tax-cl); sin fuente oficial"
+    },
+    "tope_uf_mensual": {
+      "nombre": "Tope imponible (UF/mes)",
+      "valor": 90,
+      "verificado": "2026-10-20",
+      "fuente": "Superintendencia de Pensiones"
+    },
+    "uta": {
+      "nombre": "UTA dic. 2025",
+      "valor": 834504,
+      "verificado": "2026-10-20",
+      "fuente": "SII"
+    }
+  }
 }

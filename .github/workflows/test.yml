@@ -1,7 +1,7 @@
 name: test
 on:
   push:
-    paths: ["assets/**", "tests/**"]
+    paths: ["assets/**", "tests/**", "package*.json", "README.md"]
   pull_request:
 jobs:
   test:
@@ -11,4 +11,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - run: npm ci
       - run: node --test

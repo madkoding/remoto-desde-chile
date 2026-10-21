@@ -420,3 +420,6 @@ footer p { margin: 0.3rem 0; max-width: 62ch; }
   .theme { margin: 0 0 0 auto; padding: 0.4rem 0.55rem; align-self: center; }
   .theme span { display: none; }
 }
+
+.calc-verif { border-top: 1px solid var(--line); font-size: 0.82rem; }
+.calc-verif:empty { display: none; }
