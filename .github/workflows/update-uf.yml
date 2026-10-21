@@ -9,7 +9,7 @@ jobs:
   uf:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Leer la UF vigente (mindicador.cl)
         run: |
           curl -fsS --retry 3 https://mindicador.cl/api/uf > uf.json
