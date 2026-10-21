@@ -4,6 +4,7 @@
 Uso: python3 build.py   (requiere: pip install markdown)
 """
 import html
+import json
 import re
 from pathlib import Path
 
@@ -13,6 +14,8 @@ ROOT = Path(__file__).parent
 SRC = ROOT / "GUIA.md"
 OUT = ROOT / "index.html"
 REPO = "https://github.com/madkoding/remoto-desde-chile"
+SITE = "https://madkoding.github.io/remoto-desde-chile/"
+MODIFIED = json.loads(Path("assets/params.json").read_text())["fecha"]
 
 ICONS = {'search': '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>', 'coin': '<circle cx="12" cy="12" r="9.5"/><path d="M12 6.5v11M15 9.5c0-1.2-1.3-2-3-2s-3 .8-3 2 1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2-3-.8-3-2"/>', 'wallet': '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/>', 'bank': '<path d="M3 21h18M5 21V10M9.5 21V10M14.5 21V10M19 21V10M12 3l9 5H3z"/>', 'trend': '<path d="m3 17 6-6 4 4 8-8M15 7h6v6"/>', 'home': '<path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/>', 'help': '<circle cx="12" cy="12" r="9.5"/><path d="M9.5 9.2a2.6 2.6 0 1 1 3.6 2.4c-.7.4-1.1 1-1.1 1.8M12 17h.01"/>', 'check': '<path d="m9 11 3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>', 'book': '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>', 'calc': '<rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 15h.01M12 15h.01M15.5 15h.01M8.5 18.5h.01M12 18.5h3.5"/>', 'brief': '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>', 'clip': '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/>', 'pin': '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>', 'swap': '<path d="M4 8h15l-4-4M20 16H5l4 4"/>', 'phone': '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/>', 'globe': '<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/>', 'send': '<path d="m21 3-9.5 9.5M21 3l-6.5 18-3-8.5L3 9.5z"/>', 'file': '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>', 'cal': '<rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4M16 3v4M3.5 10h17"/>', 'shield': '<path d="M12 3 4.5 6v5.5c0 4.5 3.2 8.2 7.5 9.5 4.3-1.3 7.5-5 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>', 'list': '<path d="M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01"/>', 'star': '<path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.3l1.1-6.2L3 9.7l6.2-.9z"/>'}
 
@@ -47,21 +50,31 @@ TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Remoto desde Chile</title>
-<meta name="description" content="Guía práctica para desarrolladores que trabajan remoto desde Chile: cómo cobrar, emitir boletas, cotizar y declarar impuestos en 2026.">
+<title>Trabajar remoto desde Chile: cobrar en dólares, boletas e impuestos 2026</title>
+<meta name="description" content="Guía 2026 para trabajar remoto desde Chile para empresas del extranjero: cobrar en dólares, boletas de honorarios, cotizaciones, Operación Renta y simulador de impuestos.">
+<link rel="canonical" href="https://madkoding.github.io/remoto-desde-chile/">
+<link rel="alternate" hreflang="es-CL" href="https://madkoding.github.io/remoto-desde-chile/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="madkoding">
+<meta name="keywords" content="trabajo remoto Chile, cobrar en dólares, boleta de honorarios, impuestos, cotizaciones, Operación Renta, simulador">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161a1e" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CL">
-<meta property="og:title" content="Remoto desde Chile">
+<meta property="og:title" content="Trabajar remoto desde Chile: cobrar en dólares, boletas e impuestos 2026">
+<meta property="og:site_name" content="Remoto desde Chile">
 <meta property="og:description" content="Cobra en dólares, cotiza y declara en Chile. Guía 2026 con simulador de impuestos y cotizaciones.">
 <meta property="og:url" content="https://madkoding.github.io/remoto-desde-chile/">
 <meta property="og:image" content="https://madkoding.github.io/remoto-desde-chile/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trabajar remoto desde Chile: cobrar en dólares, boletas e impuestos 2026">
+<meta name="twitter:description" content="Guía 2026 con simulador de impuestos y cotizaciones para quienes cobran del extranjero.">
+<meta name="twitter:image" content="https://madkoding.github.io/remoto-desde-chile/assets/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://madkoding.github.io/remoto-desde-chile/#site","url":"https://madkoding.github.io/remoto-desde-chile/","name":"Remoto desde Chile","inLanguage":"es-CL"},{"@type":"Article","headline":"Trabajar remoto desde Chile: cobrar en dólares, boletas e impuestos 2026","inLanguage":"es-CL","author":{"@type":"Person","name":"madkoding","url":"https://github.com/madkoding"},"dateModified":"__DATE__","mainEntityOfPage":"https://madkoding.github.io/remoto-desde-chile/","image":"https://madkoding.github.io/remoto-desde-chile/assets/og.png","license":"https://creativecommons.org/licenses/by/4.0/"},{"@type":"SoftwareApplication","name":"Simulador de impuestos y cotizaciones para honorarios","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CLP"},"url":"https://madkoding.github.io/remoto-desde-chile/#simulador"}]}</script>
 <link rel="preload" href="assets/fonts/michroma-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script src="assets/theme.js"></script>
@@ -85,7 +98,7 @@ __NAV__
     <header class="hero">
       <h1>Cobra en dólares, cotiza y declara en Chile.</h1>
       <p class="lead">Guía para desarrolladores que trabajan para el extranjero desde Chile. Las cifras de 2026 vienen del SII y de Previsión Social; lo que no pudimos verificar está marcado.</p>
-      <section class="calc" aria-labelledby="calc-title">
+      <section class="calc" id="simulador" aria-labelledby="calc-title">
         <div class="calc-head">
           <h2 id="calc-title">__CALCICON__<span>Simula tu año</span></h2>
           <p>Estimación referencial, no reemplaza tu declaración.</p>
@@ -187,8 +200,13 @@ def main():
     )
 
     page = (TEMPLATE.replace("__NAV__", nav).replace("__BODY__", out)
-            .replace("__DISCLAIMER__", disclaimer).replace("__CALCICON__", icon("calc")).replace("__REPO__", REPO))
+            .replace("__DISCLAIMER__", disclaimer).replace("__CALCICON__", icon("calc")).replace("__REPO__", REPO).replace("__DATE__", MODIFIED))
     OUT.write_text(page, encoding="utf-8")
+    Path("sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f'  <url><loc>{SITE}</loc><lastmod>{MODIFIED}</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>\n</urlset>\n',
+        encoding="utf-8")
+    Path("robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n", encoding="utf-8")
     print(f"index.html: {len(page):,} bytes, {len(md.toc_tokens)} secciones")
 
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madkoding.github.io/remoto-desde-chile/sitemap.xml
