@@ -184,7 +184,7 @@ Después de entregarle los datos a tu empleador:
 - desde ahí puedes vender los dólares y los pesos se depositan en tu cuenta en CLP.
 - también puedes pagar compras internacionales (por ejemplo, AliExpress o Uber) directamente con esos dólares.
 
-Es muy cómodo: el pago llega directo y puedes venderlo sin ir a una oficina, con el depósito en tu cuenta en pesos.
+Su ventaja es la comodidad: recibes el pago directo y puedes venderlo sin ir a una oficina, con el abono en tu cuenta en pesos.
 
 Eso sí, ten presente que:
 
@@ -195,7 +195,7 @@ Eso sí, ten presente que:
 
 **¿Cómo se abre una cuenta corriente en dólares?**
 
-Avísale a tu ejecutivo que quieres abrir una cuenta en dólares porque recibes tu sueldo en USD por remesa internacional; él te guiará. Ten en cuenta que:
+Pídele a tu ejecutivo abrir una cuenta en dólares explicando que recibirás tu sueldo en USD desde el exterior; te indicará los pasos. Considera que:
 
 - es normal que te pidan acreditar el origen de esos pagos (sirve un contrato).
 - si ya recibiste pagos antes, pueden pedirte los comprobantes.
@@ -227,9 +227,9 @@ El tipo de cambio que obtienes depende de cómo vendas los dólares:
 
 Si tu empleador no tiene presencia legal en Chile, emite tú la boleta de honorarios desde el [sitio del SII](https://www.sii.cl), eligiendo la opción en que el emisor (tú) retiene el Pago Provisional Mensual (PPM).
 
-Para empresas extranjeras el SII dispone de un RUT genérico: **44.444.446-0**. En región puedes indicar cualquiera, pero la dirección debería ser la real de la empresa.
+Para clientes extranjeros se usa el RUT genérico **44.444.446-0**; la región es indiferente, pero conviene poner la dirección real de la empresa.
 
-Si cobras en dólares, convierte el total a pesos con la [tabla dólar-peso del SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm).
+Si cobras en dólares, pasa el monto a pesos según la [tabla del dólar del SII](https://www.sii.cl/valores_y_fechas/dolar/dolar2026.htm).
 
 ### Impuestos mensuales
 
@@ -284,20 +284,20 @@ La "operación renta" es el proceso anual en que calculas y pagas los impuestos 
 
 El cálculo exacto es complejo, pero a grandes rasgos funciona así: a lo que retuvieron tus boletas durante el año se le restan los impuestos y las cotizaciones. Si sobra, te lo devuelven; si falta, lo pagas.
 
-El SII arma una propuesta de formulario F22 con los datos de tus pagos mensuales y la información que le entregan otras instituciones.
+El SII te presenta un F22 prellenado con tus declaraciones mensuales y los datos que recibe de terceros.
 
 Tu empleador del exterior también debe informar lo que te paga. Lo habitual es que te pidan una declaración de que no tributas en su país y de que te harás cargo de tus impuestos en Chile; en empresas de EE.UU. se usa el [formulario W-8BEN](https://www.irs.gov/pub/irs-pdf/fw8ben.pdf).
 
 #### Impuestos en la declaración anual
 
-Existen varios impuestos anuales, pero si tu ingreso principal son boletas a una empresa extranjera, el que te importa es el *Impuesto Global Complementario* (IGC).
+De los impuestos anuales, el que te afecta si facturas con boletas a una empresa extranjera es el *Impuesto Global Complementario* (IGC).
 
-El IGC se calcula sobre tu base imponible: `BASE_IMPONIBLE = SUELDO_BRUTO - GASTOS`, donde:
+La base sobre la que se calcula es `BASE_IMPONIBLE = SUELDO_BRUTO - GASTOS`, donde:
 
 - `SUELDO_BRUTO` es tu ingreso bruto anual por honorarios.
 - `GASTOS`: por defecto se usan gastos presuntos equivalentes al **30% del ingreso bruto, con tope de 15 UTA** (≈ $12,5 millones para el AT 2026). Ese tope se alcanza con ingresos brutos de 50 UTA (≈ $41,7 millones). No se pueden combinar gastos presuntos y efectivos.
 
-Con la base imponible ya puedes estimar el impuesto: `IMPUESTOS = BASE_IMPONIBLE * FACTOR - REBAJA`
+Luego se aplica: `IMPUESTOS = BASE_IMPONIBLE * FACTOR - REBAJA`
 
 `FACTOR` y `REBAJA` salen de la tabla del impuesto global complementario. Para el **Año Tributario 2026** (rentas de 2025) la renta anual está exenta hasta 13,5 UTA = $11.265.804, y la UTA de diciembre 2025 es $834.504 (UTM de diciembre 2025: $69.542, según el SII). Los factores y rebajas, expresados en UTA, son los mismos de la tabla mensual en UTM del SII; abajo están convertidos a pesos con esa UTA:
 
@@ -344,7 +344,7 @@ Lo importante: la retención creciente de la Ley 21.133 se acerca cada año a lo
 
 Una advertencia previa: estos temas son complejos y se puede perder **mucho** dinero al invertir o al pagar impuestos. Si recibes stock options o algo similar, no tomes nada de esta sección como cierto y consulta con profesionales financieros y tributarios.
 
-Las stock options y las RSUs son beneficios que algunas empresas entregan además del sueldo, con la idea de que participes si a la compañía le va bien.
+Stock options y RSUs son compensación adicional al sueldo: si la empresa prospera, tú participas de ese éxito.
 
 Las stock options suelen darlas las startups. Te otorgan el derecho (la *opción*) de comprar acciones a un precio fijado de antemano, el *strike price*. Si la empresa crece, el valor real de la acción sube mientras tu precio de compra se mantiene. Si la startup fracasa (lo más probable) o su valor no sube, las opciones **no valen nada**.
 
@@ -362,7 +362,7 @@ Las RSUs las entregan sobre todo empresas ya públicas o más consolidadas. Equi
 
 Los criterios de los bancos cambian seguido y varían entre instituciones. Lo que sigue combina nuestra experiencia con una guía publicada en 2026 ([El Desconcierto, mayo 2026](https://eldesconcierto.cl/tendencias/requisitos-credito-hipotecario-chile-guia-completa-paso-paso-n5458775)).
 
-Si trabajas a distancia para una empresa de EE.UU. sin contrato con una empresa chilena, los bancos te clasifican como **TRABAJADOR INDEPENDIENTE**, aunque en la práctica funciones como dependiente.
+Si trabajas remoto para una empresa estadounidense y no tienes contrato con una chilena, los bancos te tratan como **TRABAJADOR INDEPENDIENTE**, aunque en la práctica seas dependiente.
 
 Es probable que te vean como un cliente de mayor riesgo por ese solo hecho. Tiene lógica: los independientes suelen tener ingresos variables y, históricamente, muchos no pagaban sus cotizaciones (de ahí que ahora sean obligatorias).
 
@@ -370,7 +370,7 @@ Por eso te pedirán bastante respaldo en operaciones como un **CRÉDITO HIPOTECA
 
 ### Cómo calculan tu sueldo líquido para prestarte plata (Créditos hipotecarios)
 
-Recuerda que el SII calcula tus impuestos sobre el 70% de tu ingreso bruto, porque descuenta un 30% de gastos presuntos.
+El SII, como vimos, tributa sobre el 70% de tu ingreso bruto (descuenta 30% de gastos presuntos).
 
 Se comenta que los bancos aplican algo similar para estimar tu líquido en créditos como el hipotecario: si ganas $2.000.000, considerarían un líquido de $1.400.000. **Sin verificar:** no encontramos una fuente que lo confirme.
 

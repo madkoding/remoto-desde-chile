@@ -28,6 +28,6 @@ Guía para desarrolladores que trabajan para el extranjero desde Chile: cómo co
 
 - **Código** (`build.py`, `assets/*.js`, `assets/style.css`, `tests/`, `.github/`): [MIT](LICENSE).
 - **Fuentes** (`assets/fonts/`): Barlow, Michroma y DSEG14, bajo SIL Open Font License 1.1 (cada licencia está junto a su fuente).
-- **Texto de la guía** (`GUIA.md`): todavía no tiene una licencia declarada. Hasta definirla, no se concede permiso de reutilización más allá de leerla en el sitio.
+- **Texto de la guía** (`GUIA.md`): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es); puedes reutilizarlo citando la fuente.
 
 Esta información no constituye asesoramiento legal, financiero ni tributario.
